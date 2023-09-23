@@ -1,4 +1,5 @@
-﻿using _SampleJorgeTorrent.Code.DesignPatterns;
+﻿using _SampleJorgeTorrent.Code.DesignPatterns.ServiceLocatorPattern;
+using _SampleJorgeTorrent.Code.PlayerController.Services;
 using _SampleJorgeTorrent.Code.ScriptableProperties;
 using UniRx;
 using UnityEngine;
@@ -11,13 +12,15 @@ namespace _SampleJorgeTorrent.Code.PlayerController.Actions
 
         private GameInputControls _playerInputControls;
         private Transform _playerTransform;
+        private PlayerMaths _playerMaths;
         private Rigidbody _playerRigidbody;
         private Animator _playerAnimator;
 
-        protected override void Configure(ServiceLocator playerServiceLocator)
+        protected override void StorePlayerServices(ServiceLocator playerServiceLocator)
         {
             _playerInputControls = playerServiceLocator.GetService<GameInputControls>();
             _playerTransform = playerServiceLocator.GetService<Transform>();
+            _playerMaths = playerServiceLocator.GetService<PlayerMaths>();
             _playerRigidbody = playerServiceLocator.GetService<Rigidbody>();
             _playerAnimator = playerServiceLocator.GetService<Animator>();
         }
@@ -26,7 +29,7 @@ namespace _SampleJorgeTorrent.Code.PlayerController.Actions
         {
             _playerInputControls.Player.Move.started += context => PerformIfAllowed();
             _playerInputControls.Player.Move.canceled += context => CancelIfActive();
-            _playerInputControls.Player.Move.performed += context => Run(context.ReadValue<Vector2>());
+            _playerInputControls.Player.Move.performed += context => Run();
 
             DefineReactivation();
         }
@@ -46,13 +49,13 @@ namespace _SampleJorgeTorrent.Code.PlayerController.Actions
                 return;
             }
 
-            if (IsInputActionInProgress())
+            if (IsMoveInputInProgress())
             {
                 PerformIfAllowed();
             }
         }
 
-        private bool IsInputActionInProgress()
+        private bool IsMoveInputInProgress()
         {
             float inputActionAbsValue = Mathf.Abs(_playerInputControls.Player.Move.ReadValue<Vector2>().magnitude);
             return inputActionAbsValue > 0;
@@ -61,7 +64,7 @@ namespace _SampleJorgeTorrent.Code.PlayerController.Actions
         protected override void Perform()
         {
             _playerAnimator.SetBool("IsRunning", true);
-            Run(_playerInputControls.Player.Move.ReadValue<Vector2>());
+            Run();
         }
 
         protected override void Cancel()
@@ -77,23 +80,20 @@ namespace _SampleJorgeTorrent.Code.PlayerController.Actions
             _playerRigidbody.velocity = newVelocity;
         }
 
-        private void Run(Vector2 direction)
+        private void Run()
         {
             if (IsInactive)
             {
                 return;
             }
 
-            SetBodyRotation(direction);
+            OrientBody();
             SetBodyVelocity();
         }
 
-        private void SetBodyRotation(Vector2 direction)
+        private void OrientBody()
         {
-            float angleOffset = direction.y < 0 ? 180 : 0;
-            float rotation = Camera.main.transform.rotation.eulerAngles.y + angleOffset + Mathf.Rad2Deg * Mathf.Atan(direction.x / direction.y);
-            Vector3 newRotation = new Vector3(0, rotation, 0);
-            _playerTransform.rotation = Quaternion.Euler(newRotation);
+            _playerTransform.rotation = Quaternion.Euler(_playerMaths.EulerRotation);
         }
 
         private void SetBodyVelocity()

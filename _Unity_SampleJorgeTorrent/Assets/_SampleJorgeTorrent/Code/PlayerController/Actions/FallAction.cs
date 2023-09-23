@@ -1,4 +1,4 @@
-﻿using _SampleJorgeTorrent.Code.DesignPatterns;
+﻿using _SampleJorgeTorrent.Code.DesignPatterns.ServiceLocatorPattern;
 using _SampleJorgeTorrent.Code.PlayerController.Actions;
 using _SampleJorgeTorrent.Code.PlayerController.Services;
 using UnityEngine;
@@ -12,14 +12,16 @@ namespace Assets._SampleJorgeTorrent.Code.PlayerController.Actions
         private GameInputControls _playerInputControls;
         private GroundDetector _groundEventsDispatcher;
         private Transform _playerTransform;
+        private PlayerMaths _playerMaths;
         private Rigidbody _playerRigidbody;
         private Animator _playerAnimator;
 
-        protected override void Configure(ServiceLocator playerServiceLocator)
+        protected override void StorePlayerServices(ServiceLocator playerServiceLocator)
         {
             _playerInputControls = playerServiceLocator.GetService<GameInputControls>();
             _groundEventsDispatcher = playerServiceLocator.GetService<GroundDetector>();
             _playerTransform = playerServiceLocator.GetService<Transform>();
+            _playerMaths = playerServiceLocator.GetService<PlayerMaths>();
             _playerRigidbody = playerServiceLocator.GetService<Rigidbody>();
             _playerAnimator = playerServiceLocator.GetService<Animator>();
         }
@@ -28,13 +30,22 @@ namespace Assets._SampleJorgeTorrent.Code.PlayerController.Actions
         {
             _groundEventsDispatcher.OnJustUngrounded += PerformIfAllowed;
             _groundEventsDispatcher.OnJustGrounded += CancelIfActive;
-            _playerInputControls.Player.Move.performed += context => Redirect(context.ReadValue<Vector2>());
+            _playerInputControls.Player.Move.performed += context => Redirect();
         }
 
         protected override void Perform()
         {
             _playerAnimator.SetBool("IsFalling", true);
-            Redirect(_playerInputControls.Player.Move.ReadValue<Vector2>());
+            if (IsMoveInputInProgress())
+            {
+                Redirect();
+            }
+        }
+
+        private bool IsMoveInputInProgress()
+        {
+            float inputActionAbsValue = Mathf.Abs(_playerInputControls.Player.Move.ReadValue<Vector2>().magnitude);
+            return inputActionAbsValue > 0;
         }
 
         protected override void Cancel()
@@ -50,18 +61,24 @@ namespace Assets._SampleJorgeTorrent.Code.PlayerController.Actions
             _playerRigidbody.velocity = newVelocity;
         }
 
-        private void Redirect(Vector2 direction)
+        private void Redirect()
         {
             if (IsInactive)
             {
                 return;
             }
 
-            float angleOffset = direction.y < 0 ? 180 : 0;
-            float rotation = Camera.main.transform.rotation.eulerAngles.y + angleOffset + Mathf.Rad2Deg * Mathf.Atan(direction.x / direction.y);
-            Vector3 newRotation = new Vector3(0, rotation, 0);
-            _playerTransform.rotation = Quaternion.Euler(newRotation);
+            OrientBody();
+            SetBodyVelocity();
+        }
 
+        private void OrientBody()
+        {
+            _playerTransform.rotation = Quaternion.Euler(_playerMaths.EulerRotation);
+        }
+
+        private void SetBodyVelocity()
+        {
             float verticalVelocity = _playerRigidbody.velocity.y;
             Vector3 newVelocity = _playerTransform.forward * _redirectionVelocity;
             newVelocity.y = verticalVelocity;

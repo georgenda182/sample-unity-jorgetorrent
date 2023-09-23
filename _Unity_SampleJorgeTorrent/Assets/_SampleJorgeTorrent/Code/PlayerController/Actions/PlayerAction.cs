@@ -1,4 +1,4 @@
-using _SampleJorgeTorrent.Code.DesignPatterns;
+using _SampleJorgeTorrent.Code.DesignPatterns.ServiceLocatorPattern;
 using _SampleJorgeTorrent.Code.ScriptableProperties;
 using System.Collections.Generic;
 using UniRx;
@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace _SampleJorgeTorrent.Code.PlayerController.Actions
 {
-    public abstract class PlayerAction : MonoBehaviour
+    public abstract class PlayerAction : MonoBehaviour, ServicesConsumer
     {
         [SerializeField] protected BoolProperty _state;
         [SerializeField] protected List<BoolProperty> _prohibitorStates;
@@ -40,12 +40,12 @@ namespace _SampleJorgeTorrent.Code.PlayerController.Actions
 
         public void Install(ServiceLocator playerServiceLocator)
         {
-            Configure(playerServiceLocator);
+            StorePlayerServices(playerServiceLocator);
             DefinePerformanceConditions();
             DetermineCancellationWhenNotAllowed();
         }
 
-        protected abstract void Configure(ServiceLocator playerServiceLocator);
+        protected abstract void StorePlayerServices(ServiceLocator playerServiceLocator);
         protected abstract void DefinePerformanceConditions();
 
         private void DetermineCancellationWhenNotAllowed()

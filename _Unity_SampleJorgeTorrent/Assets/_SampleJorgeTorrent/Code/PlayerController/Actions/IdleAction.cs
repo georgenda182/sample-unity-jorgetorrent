@@ -1,4 +1,4 @@
-﻿using _SampleJorgeTorrent.Code.DesignPatterns;
+﻿using _SampleJorgeTorrent.Code.DesignPatterns.ServiceLocatorPattern;
 using _SampleJorgeTorrent.Code.ScriptableProperties;
 using UniRx;
 using UnityEngine;
@@ -9,7 +9,7 @@ namespace _SampleJorgeTorrent.Code.PlayerController.Actions
     {
         private Animator _playerAnimator;
 
-        protected override void Configure(ServiceLocator playerServiceLocator)
+        protected override void StorePlayerServices(ServiceLocator playerServiceLocator)
         {
             _playerAnimator = playerServiceLocator.GetService<Animator>();
         }

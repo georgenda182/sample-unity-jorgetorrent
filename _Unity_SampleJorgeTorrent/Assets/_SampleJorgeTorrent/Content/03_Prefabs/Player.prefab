@@ -109,6 +109,7 @@ GameObject:
   - component: {fileID: 736556594}
   - component: {fileID: 736556595}
   - component: {fileID: 6891661647474531060}
+  - component: {fileID: 187794244}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -206,6 +207,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!75 &187794244
+ConstantForce:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148589896098552372}
+  m_Enabled: 1
+  m_Force: {x: 0, y: -20, z: 0}
+  m_RelativeForce: {x: 0, y: 0, z: 0}
+  m_Torque: {x: 0, y: 0, z: 0}
+  m_RelativeTorque: {x: 0, y: 0, z: 0}
 --- !u!1 &253423929885669158
 GameObject:
   m_ObjectHideFlags: 0
@@ -717,7 +730,7 @@ MonoBehaviour:
   _state: {fileID: 11400000, guid: ecc520f159ac9424bbc751c327edc287, type: 2}
   _prohibitorStates:
   - {fileID: 11400000, guid: ebe7ecb8907e2fa4589b5f5f5e25dff1, type: 2}
-  _forceMagnitude: 300
+  _forceMagnitude: 500
 --- !u!1 &3372263236528121008
 GameObject:
   m_ObjectHideFlags: 0
@@ -799,6 +812,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _state: {fileID: 11400000, guid: ebe7ecb8907e2fa4589b5f5f5e25dff1, type: 2}
   _prohibitorStates: []
+  _redirectionVelocity: 4
 --- !u!1 &3912966133729457607
 GameObject:
   m_ObjectHideFlags: 0
@@ -1146,6 +1160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39e95375fc113344eafe1621dbefc969, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  grounds: 
 --- !u!135 &8559826856460559086
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1302,6 +1317,7 @@ MonoBehaviour:
   _prohibitorStates:
   - {fileID: 11400000, guid: ecc520f159ac9424bbc751c327edc287, type: 2}
   - {fileID: 11400000, guid: ebe7ecb8907e2fa4589b5f5f5e25dff1, type: 2}
+  _velocity: 4
 --- !u!1 &8553261940338737045
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine.Assertions;
 
-namespace _SampleJorgeTorrent.Code.DesignPatterns
+namespace _SampleJorgeTorrent.Code.DesignPatterns.ServiceLocatorPattern
 {
     public class ServiceLocator
     {

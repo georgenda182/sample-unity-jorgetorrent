@@ -1,4 +1,4 @@
-using _SampleJorgeTorrent.Code.DesignPatterns;
+using _SampleJorgeTorrent.Code.DesignPatterns.ServiceLocatorPattern;
 using _SampleJorgeTorrent.Code.PlayerController.Actions;
 using _SampleJorgeTorrent.Code.PlayerController.Services;
 using System.Collections.Generic;
@@ -14,6 +14,8 @@ namespace _SampleJorgeTorrent.Code.PlayerController
         [SerializeField] private Rigidbody _playerRigidbody;
         [SerializeField] private Animator _playerAnimator;
         [SerializeField] private GroundTriggerDetector _groundDetector;
+        private Camera _playerCamera;
+        private PlayerMaths _playerMaths;
 
         [Header("Actions")]
         [SerializeField] private List<PlayerAction> _playerActions;
@@ -24,6 +26,7 @@ namespace _SampleJorgeTorrent.Code.PlayerController
         {
             ConfigureServiceLocator();
             InstallActions();
+            InstallOtherServicesConsumers();
         }
 
         private void ConfigureServiceLocator()
@@ -33,11 +36,17 @@ namespace _SampleJorgeTorrent.Code.PlayerController
             _playerInputControls = new GameInputControls();
             _playerInputControls.Enable();
 
+            _playerCamera = Camera.main;
+
+            _playerMaths = new PlayerMaths();
+
+            _playerServiceLocator.RegisterService(_playerCamera);
             _playerServiceLocator.RegisterService(_playerInputControls);
             _playerServiceLocator.RegisterService(transform);
             _playerServiceLocator.RegisterService(_playerRigidbody);
             _playerServiceLocator.RegisterService(_playerAnimator);
             _playerServiceLocator.RegisterService<GroundDetector>(_groundDetector);
+            _playerServiceLocator.RegisterService(_playerMaths);
         }
 
         private void InstallActions()
@@ -46,6 +55,11 @@ namespace _SampleJorgeTorrent.Code.PlayerController
             {
                 action.Install(_playerServiceLocator);
             }
+        }
+
+        private void InstallOtherServicesConsumers()
+        {
+            _playerMaths.Install(_playerServiceLocator);
         }
     }
 }

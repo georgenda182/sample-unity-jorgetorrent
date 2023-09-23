@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
 
 namespace _SampleJorgeTorrent.Code.PlayerController.Services
 {
@@ -8,17 +10,43 @@ namespace _SampleJorgeTorrent.Code.PlayerController.Services
         public event GroundDetector.GroundCallback OnJustGrounded;
         public event GroundDetector.GroundCallback OnJustUngrounded;
 
+        private HashSet<int> currentGroundsDetected = new HashSet<int>();
+        public List<int> grounds = new List<int>();
+
         private void OnTriggerEnter(Collider other)
         {
-            if (OnJustGrounded != null)
+            AddGroundAndCallEventIfConvenient(other.GetInstanceID());
+        }
+
+        private void AddGroundAndCallEventIfConvenient(int groundId)
+        {
+            bool wasNotGrounded = currentGroundsDetected.Count == 0;
+
+            currentGroundsDetected.Add(groundId);
+
+            if (wasNotGrounded && OnJustGrounded != null)
             {
                 OnJustGrounded();
             }
         }
 
+        private void Update()
+        {
+            grounds = currentGroundsDetected.ToList();
+        }
+
         private void OnTriggerExit(Collider other)
         {
-            if (OnJustUngrounded != null)
+            RemoveGroundAndCallEventIfConvenient(other.GetInstanceID());
+        }
+
+        private void RemoveGroundAndCallEventIfConvenient(int groundId)
+        {
+            bool wasGrounded = currentGroundsDetected.Count == 1;
+
+            currentGroundsDetected.Remove(groundId);
+
+            if (wasGrounded && OnJustUngrounded != null)
             {
                 OnJustUngrounded();
             }

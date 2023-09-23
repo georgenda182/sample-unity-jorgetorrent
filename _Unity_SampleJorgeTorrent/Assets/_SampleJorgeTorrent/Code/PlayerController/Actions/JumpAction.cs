@@ -1,5 +1,4 @@
-﻿using _SampleJorgeTorrent.Code.DesignPatterns;
-using _SampleJorgeTorrent.Code.ScriptableProperties;
+﻿using _SampleJorgeTorrent.Code.DesignPatterns.ServiceLocatorPattern;
 using UnityEngine;
 
 namespace _SampleJorgeTorrent.Code.PlayerController.Actions
@@ -7,11 +6,12 @@ namespace _SampleJorgeTorrent.Code.PlayerController.Actions
     public class JumpAction : PlayerAction
     {
         [SerializeField] private float _forceMagnitude = 250;
+
         private GameInputControls _playerInputControls;
         private Rigidbody _playerRigidbody;
         private Animator _playerAnimator;
 
-        protected override void Configure(ServiceLocator playerServiceLocator)
+        protected override void StorePlayerServices(ServiceLocator playerServiceLocator)
         {
             _playerInputControls = playerServiceLocator.GetService<GameInputControls>();
             _playerRigidbody = playerServiceLocator.GetService<Rigidbody>();
