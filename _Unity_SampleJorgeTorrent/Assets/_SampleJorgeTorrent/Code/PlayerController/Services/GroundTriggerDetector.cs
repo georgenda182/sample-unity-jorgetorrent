@@ -11,7 +11,6 @@ namespace _SampleJorgeTorrent.Code.PlayerController.Services
         public event GroundDetector.GroundCallback OnJustUngrounded;
 
         private HashSet<int> currentGroundsDetected = new HashSet<int>();
-        public List<int> grounds = new List<int>();
 
         private void OnTriggerEnter(Collider other)
         {
@@ -28,11 +27,6 @@ namespace _SampleJorgeTorrent.Code.PlayerController.Services
             {
                 OnJustGrounded();
             }
-        }
-
-        private void Update()
-        {
-            grounds = currentGroundsDetected.ToList();
         }
 
         private void OnTriggerExit(Collider other)

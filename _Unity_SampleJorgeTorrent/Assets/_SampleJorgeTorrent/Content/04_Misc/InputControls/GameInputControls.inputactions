@@ -6,10 +6,19 @@
             "id": "7f988bc7-027a-45f2-a3ae-9686df6fe39c",
             "actions": [
                 {
+                    "name": "Camera",
+                    "type": "Value",
+                    "id": "4eb52c91-520f-4c41-b450-9d511944dbf9",
+                    "expectedControlType": "Vector2",
+                    "processors": "StickDeadzone",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
                     "name": "Move",
                     "type": "Value",
                     "id": "6000da7b-b6da-4938-9af7-19cddfa3c71f",
-                    "expectedControlType": "Stick",
+                    "expectedControlType": "Vector2",
                     "processors": "StickDeadzone",
                     "interactions": "",
                     "initialStateCheck": true
@@ -55,6 +64,17 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7d0eed15-5cc9-4a6c-8469-a9b597332ebe",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Camera",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

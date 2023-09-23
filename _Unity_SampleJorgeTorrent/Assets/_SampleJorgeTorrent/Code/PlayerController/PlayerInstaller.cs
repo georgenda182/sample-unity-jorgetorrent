@@ -1,5 +1,6 @@
 using _SampleJorgeTorrent.Code.DesignPatterns.ServiceLocatorPattern;
 using _SampleJorgeTorrent.Code.PlayerController.Actions;
+using _SampleJorgeTorrent.Code.PlayerController.CameraSystem;
 using _SampleJorgeTorrent.Code.PlayerController.Services;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,7 @@ namespace _SampleJorgeTorrent.Code.PlayerController
         private GameInputControls _playerInputControls;
 
         [Header("Services")]
+        [SerializeField] private PlayerCamera _playerCameraSystem;
         [SerializeField] private Rigidbody _playerRigidbody;
         [SerializeField] private Animator _playerAnimator;
         [SerializeField] private GroundTriggerDetector _groundDetector;
@@ -36,6 +38,7 @@ namespace _SampleJorgeTorrent.Code.PlayerController
             _playerInputControls = new GameInputControls();
             _playerInputControls.Enable();
 
+            _playerCameraSystem.inputPlayer = _playerInputControls;
             _playerCamera = Camera.main;
 
             _playerMaths = new PlayerMaths();
