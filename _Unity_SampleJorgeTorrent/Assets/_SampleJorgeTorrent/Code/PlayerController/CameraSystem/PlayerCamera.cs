@@ -1,10 +1,11 @@
-﻿using System.Collections;
+﻿using _SampleJorgeTorrent.Code.DesignPatterns.ServiceLocatorPattern;
+using System.Collections;
 using UnityEngine;
 
 namespace _SampleJorgeTorrent.Code.PlayerController.CameraSystem
 {
     [RequireComponent(typeof(Camera))]
-    public class PlayerCamera : MonoBehaviour
+    public class PlayerCamera : MonoBehaviour, ServicesConsumer
     {
         [SerializeField] private Transform _target;
 
@@ -15,33 +16,59 @@ namespace _SampleJorgeTorrent.Code.PlayerController.CameraSystem
         [SerializeField] private float _followSpeed = 0.125f;
         [SerializeField] private float _rotationVelocity = 36;
 
-        public GameInputControls inputPlayer;
+        private GameInputControls _playerInputControls;
 
-        private bool _isRotating;
+        private bool _isReorienting;
 
-        private Vector3 offsetFromPlayerVector => transform.forward * _offsetFromPlayer;
+        private Vector3 OffsetFromPlayerVector => transform.forward * _offsetFromPlayer;
 
-        private IEnumerator Start()
+        public void Install(ServiceLocator globalServiceLocator)
         {
-            yield return null;
-            inputPlayer.Player.Camera.started += context => { _isRotating = true; Debug.Log("Rotating"); };
-            inputPlayer.Player.Camera.canceled += context => { _isRotating = false; Debug.Log("Cancel rotation"); };
+            StoreGlobalServices(globalServiceLocator);
+            SubscribeReorientationToInputControls();
+            ReparentToRoot();
         }
 
-        private void LateUpdate()
+        private void StoreGlobalServices(ServiceLocator globalServiceLocator)
         {
-            if (_isRotating)
+            _playerInputControls = globalServiceLocator.GetService<GameInputControls>();
+        }
+
+        private void SubscribeReorientationToInputControls()
+        {
+            _playerInputControls.Player.Camera.started += context => StartReorientation();
+            _playerInputControls.Player.Camera.canceled += context => EndReorientation();
+        }
+
+        private void ReparentToRoot()
+        {
+            transform.parent = null;
+        }
+
+        private void StartReorientation()
+        {
+            _isReorienting = true;
+        }
+
+        private void EndReorientation()
+        {
+            _isReorienting = false;
+        }
+
+        private void Update()
+        {
+            if (_isReorienting)
             {
                 RotateAroundPlayer();
             }
-            Vector3 desiredPosition = _target.position - offsetFromPlayerVector;
+            Vector3 desiredPosition = _target.position - OffsetFromPlayerVector;
             Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, _followSpeed);
             transform.position = smoothedPosition;
         }
 
         private void RotateAroundPlayer()
         {
-            Vector2 rotation = inputPlayer.Player.Camera.ReadValue<Vector2>();
+            Vector2 rotation = _playerInputControls.Player.Camera.ReadValue<Vector2>();
 
             RotateAroundVerticalAxis(rotation.x);
             RotateAroundHorizontalAxis(rotation.y);

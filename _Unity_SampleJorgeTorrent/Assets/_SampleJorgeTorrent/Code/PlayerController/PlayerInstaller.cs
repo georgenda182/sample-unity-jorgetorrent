@@ -7,12 +7,11 @@ using UnityEngine;
 
 namespace _SampleJorgeTorrent.Code.PlayerController
 {
-    public class PlayerInstaller : MonoBehaviour
+    public class PlayerInstaller : MonoBehaviour, ServicesConsumer
     {
         private GameInputControls _playerInputControls;
 
         [Header("Services")]
-        [SerializeField] private PlayerCamera _playerCameraSystem;
         [SerializeField] private Rigidbody _playerRigidbody;
         [SerializeField] private Animator _playerAnimator;
         [SerializeField] private GroundTriggerDetector _groundDetector;
@@ -24,22 +23,24 @@ namespace _SampleJorgeTorrent.Code.PlayerController
 
         private ServiceLocator _playerServiceLocator;
 
-        private void Start()
+        public void Install(ServiceLocator globalServiceLocator)
         {
-            ConfigureServiceLocator();
+            StoreGlobalServices(globalServiceLocator);
+            ConfigurePlayerServiceLocator();
             InstallActions();
             InstallOtherServicesConsumers();
+            ReparentToRoot();
         }
 
-        private void ConfigureServiceLocator()
+        private void StoreGlobalServices(ServiceLocator globalServiceLocator)
+        {
+            _playerInputControls = globalServiceLocator.GetService<GameInputControls>();
+            _playerCamera = globalServiceLocator.GetService<Camera>();
+        }
+
+        private void ConfigurePlayerServiceLocator()
         {
             _playerServiceLocator = new ServiceLocator();
-
-            _playerInputControls = new GameInputControls();
-            _playerInputControls.Enable();
-
-            _playerCameraSystem.inputPlayer = _playerInputControls;
-            _playerCamera = Camera.main;
 
             _playerMaths = new PlayerMaths();
 
@@ -63,6 +64,11 @@ namespace _SampleJorgeTorrent.Code.PlayerController
         private void InstallOtherServicesConsumers()
         {
             _playerMaths.Install(_playerServiceLocator);
+        }
+
+        private void ReparentToRoot()
+        {
+            transform.parent = null;
         }
     }
 }
