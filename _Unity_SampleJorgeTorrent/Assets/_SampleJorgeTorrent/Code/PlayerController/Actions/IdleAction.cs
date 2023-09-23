@@ -14,7 +14,7 @@ namespace _SampleJorgeTorrent.Code.PlayerController.Actions
             _playerAnimator = playerServiceLocator.GetService<Animator>();
         }
 
-        protected override void DeterminePerformanceConditions()
+        protected override void DefinePerformanceConditions()
         {
             foreach (BoolProperty prohibitorState in _prohibitorStates)
             {
@@ -24,7 +24,11 @@ namespace _SampleJorgeTorrent.Code.PlayerController.Actions
 
         private void ActivatePerformanceWhenNoProhibitorStatesActive(bool prohibitorStateIsActive)
         {
-            TryPerformance();
+            if (prohibitorStateIsActive)
+            {
+                return;
+            }
+            PerformIfAllowed();
         }
 
         protected override void Perform()

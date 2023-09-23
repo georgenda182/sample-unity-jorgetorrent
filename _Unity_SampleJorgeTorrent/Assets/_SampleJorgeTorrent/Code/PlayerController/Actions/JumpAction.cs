@@ -18,9 +18,9 @@ namespace _SampleJorgeTorrent.Code.PlayerController.Actions
             _playerAnimator = playerServiceLocator.GetService<Animator>();
         }
 
-        protected override void DeterminePerformanceConditions()
+        protected override void DefinePerformanceConditions()
         {
-            _playerInputControls.Player.Jump.performed += context => TryPerformance();
+            _playerInputControls.Player.Jump.performed += context => PerformIfAllowed();
         }
 
         protected override void Perform()

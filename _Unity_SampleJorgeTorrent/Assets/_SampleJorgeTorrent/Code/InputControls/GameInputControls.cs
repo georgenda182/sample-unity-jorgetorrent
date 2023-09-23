@@ -31,7 +31,7 @@ public partial class @GameInputControls: IInputActionCollection2, IDisposable
                     ""name"": ""Move"",
                     ""type"": ""Value"",
                     ""id"": ""6000da7b-b6da-4938-9af7-19cddfa3c71f"",
-                    ""expectedControlType"": ""Vector2"",
+                    ""expectedControlType"": ""Stick"",
                     ""processors"": ""StickDeadzone"",
                     ""interactions"": """",
                     ""initialStateCheck"": true
@@ -51,7 +51,7 @@ public partial class @GameInputControls: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""befe2edb-42f2-4f50-bb4e-a07782052e2d"",
                     ""path"": ""<Gamepad>/leftStick"",
-                    ""interactions"": ""Hold"",
+                    ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""Move"",

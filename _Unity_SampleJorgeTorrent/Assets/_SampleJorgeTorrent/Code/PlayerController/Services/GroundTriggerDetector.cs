@@ -2,6 +2,7 @@
 
 namespace _SampleJorgeTorrent.Code.PlayerController.Services
 {
+    [RequireComponent(typeof(Collider))]
     public class GroundTriggerDetector : MonoBehaviour, GroundDetector
     {
         public event GroundDetector.GroundCallback OnJustGrounded;

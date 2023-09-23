@@ -123,6 +123,23 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &187794238 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 148589896098552372, guid: 6dc9d6e707d390448b8ac9b3df6648fa, type: 3}
+  m_PrefabInstance: {fileID: 2945296850680047276}
+  m_PrefabAsset: {fileID: 0}
+--- !u!75 &187794244
+ConstantForce:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187794238}
+  m_Enabled: 1
+  m_Force: {x: 0, y: -20, z: 0}
+  m_RelativeForce: {x: 0, y: 0, z: 0}
+  m_Torque: {x: 0, y: 0, z: 0}
+  m_RelativeTorque: {x: 0, y: 0, z: 0}
 --- !u!1 &591281836
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,6 +469,10 @@ PrefabInstance:
     - target: {fileID: 667717012232519822, guid: 6dc9d6e707d390448b8ac9b3df6648fa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8148449934249373773, guid: 6dc9d6e707d390448b8ac9b3df6648fa, type: 3}
+      propertyPath: _forceMagnitude
+      value: 500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6dc9d6e707d390448b8ac9b3df6648fa, type: 3}

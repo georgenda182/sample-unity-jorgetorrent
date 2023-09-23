@@ -38,20 +38,15 @@ namespace _SampleJorgeTorrent.Code.PlayerController.Actions
             }
         }
 
-        protected bool IsNotAllowedToBePerformed
-        {
-            get => !IsAllowedToBePerformed;
-        }
-
         public void Install(ServiceLocator playerServiceLocator)
         {
             Configure(playerServiceLocator);
-            DeterminePerformanceConditions();
+            DefinePerformanceConditions();
             DetermineCancellationWhenNotAllowed();
         }
 
         protected abstract void Configure(ServiceLocator playerServiceLocator);
-        protected abstract void DeterminePerformanceConditions();
+        protected abstract void DefinePerformanceConditions();
 
         private void DetermineCancellationWhenNotAllowed()
         {
@@ -63,17 +58,17 @@ namespace _SampleJorgeTorrent.Code.PlayerController.Actions
 
         private void OnProhibitorStateJustChanged(bool prohibitorStateIsActive)
         {
-            if (IsNotAllowedToBePerformed)
+            if (prohibitorStateIsActive)
             {
-                TryCancellation();
+                CancelIfActive();
             }
         }
-        protected void TryCancellation()
+        protected void CancelIfActive()
         {
             if (IsActive)
             {
-                DeactivateState();
                 Cancel();
+                DeactivateState();
             }
         }
         private void DeactivateState()
@@ -82,7 +77,7 @@ namespace _SampleJorgeTorrent.Code.PlayerController.Actions
         }
         protected abstract void Cancel();
 
-        protected void TryPerformance()
+        protected void PerformIfAllowed()
         {
             if (IsAllowedToBePerformed && IsInactive)
             {

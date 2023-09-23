@@ -32,7 +32,9 @@ namespace _SampleJorgeTorrent.Code.PlayerController
 
             _playerInputControls = new GameInputControls();
             _playerInputControls.Enable();
+
             _playerServiceLocator.RegisterService(_playerInputControls);
+            _playerServiceLocator.RegisterService(transform);
             _playerServiceLocator.RegisterService(_playerRigidbody);
             _playerServiceLocator.RegisterService(_playerAnimator);
             _playerServiceLocator.RegisterService<GroundDetector>(_groundDetector);
