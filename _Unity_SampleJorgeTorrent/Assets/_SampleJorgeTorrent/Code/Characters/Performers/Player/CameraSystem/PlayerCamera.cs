@@ -1,8 +1,7 @@
-﻿using _SampleJorgeTorrent.Code.DesignPatterns.ServiceLocatorPattern;
-using System.Collections;
+﻿using _SampleJorgeTorrent.Code.Utilities.DesignPatterns.ServiceLocatorPattern;
 using UnityEngine;
 
-namespace _SampleJorgeTorrent.Code.PlayerController.CameraSystem
+namespace _SampleJorgeTorrent.Code.Characters.Performers.Player.CameraSystem
 {
     [RequireComponent(typeof(Camera))]
     public class PlayerCamera : MonoBehaviour, ServicesConsumer

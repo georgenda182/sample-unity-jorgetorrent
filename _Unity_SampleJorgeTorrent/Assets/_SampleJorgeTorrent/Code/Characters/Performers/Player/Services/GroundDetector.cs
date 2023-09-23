@@ -1,4 +1,4 @@
-namespace _SampleJorgeTorrent.Code.PlayerController.Services
+namespace _SampleJorgeTorrent.Code.Characters.Performers.Player.Services
 {
     public interface GroundDetector
     {

@@ -1,4 +1,4 @@
-using _SampleJorgeTorrent.Code.DesignPatterns.ServiceLocatorPattern;
+using _SampleJorgeTorrent.Code.Utilities.DesignPatterns.ServiceLocatorPattern;
 using AYellowpaper;
 using System.Collections.Generic;
 using UnityEngine;

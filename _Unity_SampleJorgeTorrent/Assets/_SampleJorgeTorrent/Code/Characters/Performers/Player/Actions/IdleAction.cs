@@ -1,11 +1,11 @@
-﻿using _SampleJorgeTorrent.Code.DesignPatterns.ServiceLocatorPattern;
-using _SampleJorgeTorrent.Code.ScriptableProperties;
+﻿using _SampleJorgeTorrent.Code.Utilities.DesignPatterns.ServiceLocatorPattern;
+using _SampleJorgeTorrent.Code.Utilities.ScriptableProperties;
 using UniRx;
 using UnityEngine;
 
-namespace _SampleJorgeTorrent.Code.PlayerController.Actions
+namespace _SampleJorgeTorrent.Code.Characters.Performers.Player.Actions
 {
-    public class IdleAction : PlayerAction
+    public class IdleAction : PerformerAction
     {
         private Animator _playerAnimator;
 

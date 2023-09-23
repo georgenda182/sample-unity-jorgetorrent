@@ -1,4 +1,4 @@
-﻿namespace _SampleJorgeTorrent.Code.DesignPatterns.ServiceLocatorPattern
+﻿namespace _SampleJorgeTorrent.Code.Utilities.DesignPatterns.ServiceLocatorPattern
 {
     public interface ServicesConsumer
     {

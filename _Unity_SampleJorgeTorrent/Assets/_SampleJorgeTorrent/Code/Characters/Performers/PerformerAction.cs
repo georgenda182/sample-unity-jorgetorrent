@@ -1,12 +1,12 @@
-using _SampleJorgeTorrent.Code.DesignPatterns.ServiceLocatorPattern;
-using _SampleJorgeTorrent.Code.ScriptableProperties;
+using _SampleJorgeTorrent.Code.Utilities.DesignPatterns.ServiceLocatorPattern;
+using _SampleJorgeTorrent.Code.Utilities.ScriptableProperties;
 using System.Collections.Generic;
 using UniRx;
 using UnityEngine;
 
-namespace _SampleJorgeTorrent.Code.PlayerController.Actions
+namespace _SampleJorgeTorrent.Code.Characters.Performers
 {
-    public abstract class PlayerAction : MonoBehaviour, ServicesConsumer
+    public abstract class PerformerAction : MonoBehaviour, ServicesConsumer
     {
         [SerializeField] protected BoolProperty _state;
         [SerializeField] protected List<BoolProperty> _prohibitorStates;

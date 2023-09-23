@@ -1,9 +1,9 @@
-﻿using _SampleJorgeTorrent.Code.DesignPatterns.ServiceLocatorPattern;
+﻿using _SampleJorgeTorrent.Code.Utilities.DesignPatterns.ServiceLocatorPattern;
 using UnityEngine;
 
-namespace _SampleJorgeTorrent.Code.PlayerController.Actions
+namespace _SampleJorgeTorrent.Code.Characters.Performers.Player.Actions
 {
-    public class JumpAction : PlayerAction
+    public class JumpAction : PerformerAction
     {
         [SerializeField] private float _forceMagnitude = 250;
 

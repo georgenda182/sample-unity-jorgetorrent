@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
-namespace _SampleJorgeTorrent.Code.PlayerController.Services
+namespace _SampleJorgeTorrent.Code.Characters.Performers.Player.Services
 {
     [RequireComponent(typeof(Collider))]
     public class GroundTriggerDetector : MonoBehaviour, GroundDetector

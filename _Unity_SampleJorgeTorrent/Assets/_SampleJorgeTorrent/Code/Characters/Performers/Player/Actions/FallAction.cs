@@ -1,16 +1,15 @@
-﻿using _SampleJorgeTorrent.Code.DesignPatterns.ServiceLocatorPattern;
-using _SampleJorgeTorrent.Code.PlayerController.Services;
-using _SampleJorgeTorrent.Code.ScriptableProperties;
-using UniRx;
+﻿using _SampleJorgeTorrent.Code.Characters.Performers.Player.Services;
+using _SampleJorgeTorrent.Code.Utilities.DesignPatterns.ServiceLocatorPattern;
 using UnityEngine;
 
-namespace _SampleJorgeTorrent.Code.PlayerController.Actions
+namespace _SampleJorgeTorrent.Code.Characters.Performers.Player.Actions
 {
-    public class RunAction : PlayerAction
+    public class FallAction : PerformerAction
     {
-        [SerializeField] private float _velocity = 4;
+        [SerializeField] private float _redirectionVelocity = 4;
 
         private GameInputControls _playerInputControls;
+        private GroundDetector _groundEventsDispatcher;
         private Transform _playerTransform;
         private PlayerMaths _playerMaths;
         private Rigidbody _playerRigidbody;
@@ -19,6 +18,7 @@ namespace _SampleJorgeTorrent.Code.PlayerController.Actions
         protected override void StorePlayerServices(ServiceLocator playerServiceLocator)
         {
             _playerInputControls = playerServiceLocator.GetService<GameInputControls>();
+            _groundEventsDispatcher = playerServiceLocator.GetService<GroundDetector>();
             _playerTransform = playerServiceLocator.GetService<Transform>();
             _playerMaths = playerServiceLocator.GetService<PlayerMaths>();
             _playerRigidbody = playerServiceLocator.GetService<Rigidbody>();
@@ -27,31 +27,17 @@ namespace _SampleJorgeTorrent.Code.PlayerController.Actions
 
         protected override void DefinePerformanceConditions()
         {
-            _playerInputControls.Player.Move.started += context => PerformIfAllowed();
-            _playerInputControls.Player.Move.canceled += context => CancelIfActive();
-            _playerInputControls.Player.Move.performed += context => Run();
-
-            DefineReactivation();
+            _groundEventsDispatcher.OnJustUngrounded += PerformIfAllowed;
+            _groundEventsDispatcher.OnJustGrounded += CancelIfActive;
+            _playerInputControls.Player.Move.performed += context => Redirect();
         }
 
-        private void DefineReactivation()
+        protected override void Perform()
         {
-            foreach (BoolProperty prohibitorState in _prohibitorStates)
-            {
-                prohibitorState.Property.Subscribe(TryReactivation);
-            }
-        }
-
-        private void TryReactivation(bool prohibitorStateIsActive)
-        {
-            if (prohibitorStateIsActive)
-            {
-                return;
-            }
-
+            _playerAnimator.SetBool("IsFalling", true);
             if (IsMoveInputInProgress())
             {
-                PerformIfAllowed();
+                Redirect();
             }
         }
 
@@ -61,26 +47,20 @@ namespace _SampleJorgeTorrent.Code.PlayerController.Actions
             return inputActionAbsValue > 0;
         }
 
-        protected override void Perform()
-        {
-            _playerAnimator.SetBool("IsRunning", true);
-            Run();
-        }
-
         protected override void Cancel()
         {
-            _playerAnimator.SetBool("IsRunning", false);
-            StopMovement();
+            _playerAnimator.SetBool("IsFalling", false);
+            StopRedirection();
         }
 
-        private void StopMovement()
+        private void StopRedirection()
         {
             float verticalVelocity = _playerRigidbody.velocity.y;
             Vector3 newVelocity = _playerTransform.up * verticalVelocity;
             _playerRigidbody.velocity = newVelocity;
         }
 
-        private void Run()
+        private void Redirect()
         {
             if (IsInactive)
             {
@@ -99,7 +79,7 @@ namespace _SampleJorgeTorrent.Code.PlayerController.Actions
         private void SetBodyVelocity()
         {
             float verticalVelocity = _playerRigidbody.velocity.y;
-            Vector3 newVelocity = _playerTransform.forward * _velocity;
+            Vector3 newVelocity = _playerTransform.forward * _redirectionVelocity;
             newVelocity.y = verticalVelocity;
             _playerRigidbody.velocity = newVelocity;
         }

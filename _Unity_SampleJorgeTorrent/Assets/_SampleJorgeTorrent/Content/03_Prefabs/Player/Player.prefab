@@ -149,15 +149,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6271b907c4ee457396c09699e1b5a540, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerCameraSystem: {fileID: 0}
-  _playerRigidbody: {fileID: 736556594}
-  _playerAnimator: {fileID: 6891661647474531060}
-  _groundDetector: {fileID: 492444772511611952}
-  _playerActions:
+  _actions:
   - {fileID: 482042165145281152}
   - {fileID: 6437229893913282819}
   - {fileID: 8148449934249373773}
   - {fileID: 8871237929847812377}
+  _playerRigidbody: {fileID: 736556594}
+  _playerAnimator: {fileID: 6891661647474531060}
+  _groundDetector: {fileID: 492444772511611952}
 --- !u!54 &736556594
 Rigidbody:
   m_ObjectHideFlags: 0

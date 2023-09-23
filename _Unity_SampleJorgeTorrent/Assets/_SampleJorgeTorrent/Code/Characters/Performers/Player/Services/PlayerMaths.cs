@@ -1,7 +1,7 @@
-﻿using _SampleJorgeTorrent.Code.DesignPatterns.ServiceLocatorPattern;
+﻿using _SampleJorgeTorrent.Code.Utilities.DesignPatterns.ServiceLocatorPattern;
 using UnityEngine;
 
-namespace _SampleJorgeTorrent.Code.PlayerController.Services
+namespace _SampleJorgeTorrent.Code.Characters.Performers.Player.Services
 {
     public class PlayerMaths : ServicesConsumer
     {
