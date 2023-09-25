@@ -1,3 +1,5 @@
+using _SampleJorgeTorrent.Code.Characters.Performers.Enemies.Skeleton.Services;
+using _SampleJorgeTorrent.Code.Characters.Performers.Player.Services;
 using _SampleJorgeTorrent.Code.Utilities.DesignPatterns.ServiceLocatorPattern;
 using AYellowpaper;
 using System.Collections.Generic;
@@ -10,6 +12,7 @@ namespace _SampleJorgeTorrent.Code.GlobalInstallation
         [Header("Services")]
         [SerializeField] private Camera _camera;
         [SerializeField] private Transform _playerTransform;
+        [SerializeField] private Transform _enemyTransform;
         private GameInputControls _gameInputControls;
 
         [Header("Consumers")]
@@ -21,17 +24,25 @@ namespace _SampleJorgeTorrent.Code.GlobalInstallation
         {
             ConfigureServiceLocator();
             InstallServicesConsumers();
+            ReparentChildrenToRootAndDestroySelf();
         }
 
         private void ConfigureServiceLocator()
         {
             _globalServiceLocator = new ServiceLocator();
 
+            PlayerTransformWrapper playerTransformWrapper = new PlayerTransformWrapper();
+            playerTransformWrapper.Value = _playerTransform;
+
+            EnemyTransformWrapper enemyTransformWrapper = new EnemyTransformWrapper();
+            enemyTransformWrapper.Value = _enemyTransform;
+
             _gameInputControls = new GameInputControls();
             _gameInputControls.Enable();
 
             _globalServiceLocator.RegisterService(_camera);
-            _globalServiceLocator.RegisterService(_playerTransform);
+            _globalServiceLocator.RegisterService(playerTransformWrapper);
+            _globalServiceLocator.RegisterService(enemyTransformWrapper);
             _globalServiceLocator.RegisterService(_gameInputControls);
         }
 
@@ -41,6 +52,15 @@ namespace _SampleJorgeTorrent.Code.GlobalInstallation
             {
                 servicesConsumer.Value.Install(_globalServiceLocator);
             }
+        }
+
+        private void ReparentChildrenToRootAndDestroySelf()
+        {
+            _camera.transform.parent = null;
+            _playerTransform.parent = null;
+            _enemyTransform.parent = null;
+
+            Destroy(gameObject);
         }
     }
 }

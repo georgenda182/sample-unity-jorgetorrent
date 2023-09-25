@@ -25,7 +25,6 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Player.CameraSystem
         {
             StoreGlobalServices(globalServiceLocator);
             SubscribeReorientationToInputControls();
-            ReparentToRoot();
         }
 
         private void StoreGlobalServices(ServiceLocator globalServiceLocator)
@@ -37,11 +36,6 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Player.CameraSystem
         {
             _playerInputControls.Player.Camera.started += context => StartReorientation();
             _playerInputControls.Player.Camera.canceled += context => EndReorientation();
-        }
-
-        private void ReparentToRoot()
-        {
-            transform.parent = null;
         }
 
         private void StartReorientation()

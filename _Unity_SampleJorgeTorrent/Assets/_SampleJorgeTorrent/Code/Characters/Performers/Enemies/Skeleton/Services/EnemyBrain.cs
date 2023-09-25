@@ -1,4 +1,4 @@
-﻿using _SampleJorgeTorrent.Code.Utilities;
+﻿using _SampleJorgeTorrent.Code.Characters.Performers.Player.Services;
 using _SampleJorgeTorrent.Code.Utilities.DesignPatterns.ServiceLocatorPattern;
 using UniRx;
 using UnityEngine;
