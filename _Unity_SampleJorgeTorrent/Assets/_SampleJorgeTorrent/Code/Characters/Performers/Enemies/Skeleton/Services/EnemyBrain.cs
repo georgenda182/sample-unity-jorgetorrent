@@ -1,4 +1,5 @@
-﻿using _SampleJorgeTorrent.Code.Utilities.DesignPatterns.ServiceLocatorPattern;
+﻿using _SampleJorgeTorrent.Code.Utilities;
+using _SampleJorgeTorrent.Code.Utilities.DesignPatterns.ServiceLocatorPattern;
 using UniRx;
 using UnityEngine;
 
@@ -14,18 +15,18 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Enemies.Skeleton.Servic
 
         private Transform _playerTransform;
 
-        [SerializeField] private int _lowDistance = 1;
-        [SerializeField] private int _midDistance = 10;
+        [SerializeField] private float _lowDistance = 1.5f;
+        [SerializeField] private float _midDistance = 10f;
 
-        private IntReactiveProperty _distanceToPlayer;
-        public IntReactiveProperty DistanceToPlayer => _distanceToPlayer;
+        private FloatReactiveProperty _distanceToPlayer;
+        public FloatReactiveProperty DistanceToPlayer => _distanceToPlayer;
 
         private EnemyCallback _lastEventCalled;
 
         public void Install(ServiceLocator enemyServiceLocator)
         {
-            _playerTransform = enemyServiceLocator.GetService<Transform>();
-            _distanceToPlayer = new IntReactiveProperty();
+            _playerTransform = enemyServiceLocator.GetService<PlayerTransformWrapper>().Value;
+            _distanceToPlayer = new FloatReactiveProperty();
         }
 
         private void Update()
@@ -36,7 +37,7 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Enemies.Skeleton.Servic
 
         private void SetDistanceToPlayer()
         {
-            _distanceToPlayer.Value = (int) Vector3.Distance(_playerTransform.position, transform.position);
+            _distanceToPlayer.Value = Vector3.Distance(_playerTransform.position, transform.position);
         }
 
         private void ManageEventsCallsByDistance()
@@ -54,7 +55,7 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Enemies.Skeleton.Servic
 
         private EnemyCallback ReturnCallbackDependingOnDistanceToPlayer()
         {
-            int distanceToPlayer = _distanceToPlayer.Value;
+            float distanceToPlayer = _distanceToPlayer.Value;
 
             bool playerIsAtLargeDistance = distanceToPlayer > _midDistance;
             bool playerIsAtMidDistance = distanceToPlayer > _lowDistance && distanceToPlayer <= _midDistance;

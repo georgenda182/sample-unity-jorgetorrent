@@ -1,6 +1,6 @@
 using _SampleJorgeTorrent.Code.Characters.Performers.Enemies.Skeleton.Services;
+using _SampleJorgeTorrent.Code.Utilities;
 using _SampleJorgeTorrent.Code.Utilities.DesignPatterns.ServiceLocatorPattern;
-using Assets._SampleJorgeTorrent.Code.Characters.Performers.Enemies.Skeleton.Services;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -10,11 +10,11 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Enemies.Skeleton
     {
         [Header("Services")]
         [SerializeField] private EnemyBrain _enemyBrain;
+        [SerializeField] private Transform _enemyTransform;
         [SerializeField] private NavMeshAgent _enemyNavMeshAgent;
         [SerializeField] private Animator _enemyAnimator;
 
-        private Transform _playerTransform;
-        private EnemyAnimationController _enemyAnimationController;
+        private PlayerTransformWrapper _playerTransform;
 
         public void Install(ServiceLocator globalServiceLocator)
         {
@@ -22,17 +22,18 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Enemies.Skeleton
             ConfigureEnemyServiceLocator();
             InitializeBrain();
             InstallActions();
-            InstallOtherConsumers();
         }
 
         private void StoreGlobalServices(ServiceLocator globalServiceLocator)
         {
-            _playerTransform = globalServiceLocator.GetService<Transform>();
+            _playerTransform = new PlayerTransformWrapper();
+            _playerTransform.Value = globalServiceLocator.GetService<Transform>();
         }
 
         private void ConfigureEnemyServiceLocator()
         {
             _performerServiceLocator.RegisterService(_enemyBrain);
+            _performerServiceLocator.RegisterService(_enemyTransform);
             _performerServiceLocator.RegisterService(_enemyNavMeshAgent);
             _performerServiceLocator.RegisterService(_enemyAnimator);
             _performerServiceLocator.RegisterService(_playerTransform);
@@ -41,12 +42,6 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Enemies.Skeleton
         private void InitializeBrain()
         {
             _enemyBrain.Install(_performerServiceLocator);
-        }
-
-        private void InstallOtherConsumers()
-        {
-            _enemyAnimationController = new EnemyAnimationController();
-            _enemyAnimationController.Install(_performerServiceLocator);
         }
     }
 }

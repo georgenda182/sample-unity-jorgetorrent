@@ -51,6 +51,7 @@ MonoBehaviour:
   _servicesConsumers:
   - _underlyingValue: {fileID: 1074274087551896725}
   - _underlyingValue: {fileID: 3210473734667489130}
+  - _underlyingValue: {fileID: 0}
 --- !u!1001 &311363256612455509
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -72,7 +73,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667717012232519822, guid: 6dc9d6e707d390448b8ac9b3df6648fa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 1.84
       objectReference: {fileID: 0}
     - target: {fileID: 667717012232519822, guid: 6dc9d6e707d390448b8ac9b3df6648fa, type: 3}
       propertyPath: m_LocalPosition.z

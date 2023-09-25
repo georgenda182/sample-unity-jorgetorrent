@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 1425698174799032574}
   - component: {fileID: 7054363822211720308}
   m_Layer: 0
-  m_Name: ChaseAction
+  m_Name: Chase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -334,6 +334,52 @@ Transform:
   m_Father: {fileID: 5477741840508206311}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2997092228608661077
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1327775806598332883}
+  - component: {fileID: 2968693874620753336}
+  m_Layer: 0
+  m_Name: Attack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1327775806598332883
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2997092228608661077}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2985082146254580631}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2968693874620753336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2997092228608661077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3b98605b43dcb44fa7c1bcd86b3405c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _state: {fileID: 11400000, guid: 4872f7cc10d61f74c925fce87b654d63, type: 2}
+  _prohibitorStates: []
 --- !u!1 &3690707931061201022
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,7 +425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lowDistance: 1
-  _midDistance: 10
+  _midDistance: 5
 --- !u!1 &3977315897613630269
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,6 +456,7 @@ Transform:
   m_Children:
   - {fileID: 419640119702944898}
   - {fileID: 1425698174799032574}
+  - {fileID: 1327775806598332883}
   m_Father: {fileID: 6363796591851534077}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -689,9 +736,10 @@ MonoBehaviour:
   _actions:
   - {fileID: 6277560185107948060}
   - {fileID: 7054363822211720308}
+  - {fileID: 2968693874620753336}
   _enemyBrain: {fileID: 2742846918080276293}
+  _enemyTransform: {fileID: 6363796591851534077}
   _enemyNavMeshAgent: {fileID: 8804504602785983981}
-  _enemyRigidbody: {fileID: 0}
   _enemyAnimator: {fileID: 1058508211014544519}
 --- !u!195 &8804504602785983981
 NavMeshAgent:
@@ -1148,7 +1196,7 @@ GameObject:
   - component: {fileID: 419640119702944898}
   - component: {fileID: 6277560185107948060}
   m_Layer: 0
-  m_Name: IdleAction
+  m_Name: Idle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

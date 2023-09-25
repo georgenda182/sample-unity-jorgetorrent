@@ -1,19 +1,18 @@
 using _SampleJorgeTorrent.Code.Characters.Performers.Enemies.Skeleton.Services;
 using _SampleJorgeTorrent.Code.Utilities.DesignPatterns.ServiceLocatorPattern;
 using UnityEngine;
-using UnityEngine.AI;
 
 namespace _SampleJorgeTorrent.Code.Characters.Performers.Enemies.Skeleton.Actions
 {
     public class EnemyIdleAction : PerformerAction
     {
         private EnemyBrain _enemyBrain;
-        private NavMeshAgent _enemyNavMeshAgent;
+        private Animator _enemyAnimator;
 
         protected override void StorePerformerServices(ServiceLocator performerServiceLocator)
         {
             _enemyBrain = performerServiceLocator.GetService<EnemyBrain>();
-            _enemyNavMeshAgent = performerServiceLocator.GetService<NavMeshAgent>();
+            _enemyAnimator = performerServiceLocator.GetService<Animator>();
         }
 
         protected override void DefinePerformanceConditions()
@@ -30,12 +29,12 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Enemies.Skeleton.Action
 
         protected override void Perform()
         {
-            _enemyNavMeshAgent.enabled = false;
+            _enemyAnimator.SetBool("IsIdle", true);
         }
 
         protected override void Cancel()
         {
-            _enemyNavMeshAgent.enabled = true;
+            _enemyAnimator.SetBool("IsIdle", false);
         }
     }
 }
