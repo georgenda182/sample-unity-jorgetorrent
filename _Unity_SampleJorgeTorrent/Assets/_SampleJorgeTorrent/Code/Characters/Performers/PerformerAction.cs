@@ -38,14 +38,14 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers
             }
         }
 
-        public void Install(ServiceLocator playerServiceLocator)
+        public void Install(ServiceLocator performerServiceLocator)
         {
-            StorePlayerServices(playerServiceLocator);
+            StorePerformerServices(performerServiceLocator);
             DefinePerformanceConditions();
             DetermineCancellationWhenNotAllowed();
         }
 
-        protected abstract void StorePlayerServices(ServiceLocator playerServiceLocator);
+        protected abstract void StorePerformerServices(ServiceLocator performerServiceLocator);
         protected abstract void DefinePerformanceConditions();
 
         private void DetermineCancellationWhenNotAllowed()

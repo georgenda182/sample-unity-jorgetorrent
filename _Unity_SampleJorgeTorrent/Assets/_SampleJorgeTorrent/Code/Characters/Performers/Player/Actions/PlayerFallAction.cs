@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace _SampleJorgeTorrent.Code.Characters.Performers.Player.Actions
 {
-    public class FallAction : PerformerAction
+    public class PlayerFallAction : PerformerAction
     {
         [SerializeField] private float _redirectionVelocity = 4;
 
@@ -15,7 +15,7 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Player.Actions
         private Rigidbody _playerRigidbody;
         private Animator _playerAnimator;
 
-        protected override void StorePlayerServices(ServiceLocator playerServiceLocator)
+        protected override void StorePerformerServices(ServiceLocator playerServiceLocator)
         {
             _playerInputControls = playerServiceLocator.GetService<GameInputControls>();
             _groundEventsDispatcher = playerServiceLocator.GetService<GroundDetector>();

@@ -5,11 +5,11 @@ using UnityEngine;
 
 namespace _SampleJorgeTorrent.Code.Characters.Performers.Player.Actions
 {
-    public class IdleAction : PerformerAction
+    public class PlayerIdleAction : PerformerAction
     {
         private Animator _playerAnimator;
 
-        protected override void StorePlayerServices(ServiceLocator playerServiceLocator)
+        protected override void StorePerformerServices(ServiceLocator playerServiceLocator)
         {
             _playerAnimator = playerServiceLocator.GetService<Animator>();
         }

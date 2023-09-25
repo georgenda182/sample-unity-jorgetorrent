@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _camera: {fileID: 3210473734667489128}
+  _playerTransform: {fileID: 942969960322581723}
   _servicesConsumers:
   - _underlyingValue: {fileID: 1074274087551896725}
   - _underlyingValue: {fileID: 3210473734667489130}

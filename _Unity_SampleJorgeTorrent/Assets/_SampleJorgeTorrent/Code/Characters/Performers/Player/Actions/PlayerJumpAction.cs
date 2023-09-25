@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace _SampleJorgeTorrent.Code.Characters.Performers.Player.Actions
 {
-    public class JumpAction : PerformerAction
+    public class PlayerJumpAction : PerformerAction
     {
         [SerializeField] private float _forceMagnitude = 250;
 
@@ -11,7 +11,7 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Player.Actions
         private Rigidbody _playerRigidbody;
         private Animator _playerAnimator;
 
-        protected override void StorePlayerServices(ServiceLocator playerServiceLocator)
+        protected override void StorePerformerServices(ServiceLocator playerServiceLocator)
         {
             _playerInputControls = playerServiceLocator.GetService<GameInputControls>();
             _playerRigidbody = playerServiceLocator.GetService<Rigidbody>();

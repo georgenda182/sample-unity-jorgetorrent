@@ -9,6 +9,7 @@ namespace _SampleJorgeTorrent.Code.GlobalInstallation
     {
         [Header("Services")]
         [SerializeField] private Camera _camera;
+        [SerializeField] private Transform _playerTransform;
         private GameInputControls _gameInputControls;
 
         [Header("Consumers")]
@@ -30,6 +31,7 @@ namespace _SampleJorgeTorrent.Code.GlobalInstallation
             _gameInputControls.Enable();
 
             _globalServiceLocator.RegisterService(_camera);
+            _globalServiceLocator.RegisterService(_playerTransform);
             _globalServiceLocator.RegisterService(_gameInputControls);
         }
 
