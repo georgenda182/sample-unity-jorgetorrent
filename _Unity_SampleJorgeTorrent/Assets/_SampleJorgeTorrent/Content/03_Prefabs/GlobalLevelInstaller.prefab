@@ -113,6 +113,10 @@ PrefabInstance:
       propertyPath: _playerCameraSystem
       value: 
       objectReference: {fileID: 3210473734667489130}
+    - target: {fileID: 1798497428463058555, guid: 6dc9d6e707d390448b8ac9b3df6648fa, type: 3}
+      propertyPath: _impulseVelocity
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6dc9d6e707d390448b8ac9b3df6648fa, type: 3}
 --- !u!4 &942969960322581723 stripped

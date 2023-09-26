@@ -14,6 +14,8 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Player
         [SerializeField] private Health _playerHealth;
         [SerializeField] private Rigidbody _playerRigidbody;
         [SerializeField] private Animator _playerAnimator;
+        [SerializeField] private AnimationEventsDispatcher _playerAnimationEventsDispatcher;
+        [SerializeField] private Renderer _playerRenderer;
         [SerializeField] private GroundTriggerDetector _groundDetector;
 
         private Camera _playerCamera;
@@ -37,6 +39,7 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Player
 
         private void ConfigurePlayerServiceLocator()
         {
+            _playerAnimationEventsDispatcher.Configure();
             _playerMaths = new PlayerMaths();
 
             _performerServiceLocator.RegisterService(_playerCamera);
@@ -45,6 +48,8 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Player
             _performerServiceLocator.RegisterService(_playerHealth);
             _performerServiceLocator.RegisterService(_playerRigidbody);
             _performerServiceLocator.RegisterService(_playerAnimator);
+            _performerServiceLocator.RegisterService(_playerAnimationEventsDispatcher);
+            _performerServiceLocator.RegisterService(_playerRenderer);
             _performerServiceLocator.RegisterService<GroundDetector>(_groundDetector);
             _performerServiceLocator.RegisterService(_playerMaths);
             _performerServiceLocator.RegisterService(_enemyTransform);

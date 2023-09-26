@@ -23,6 +23,11 @@ namespace _SampleJorgeTorrent.Code.HealthSystem
             ManageEventsAfterDamageTaken();
         }
 
+        public void SetVulnerability(bool mustBeVulnerable)
+        {
+            _damageableVolume.enabled = mustBeVulnerable;
+        }
+
         private void ManageEventsAfterDamageTaken()
         {
             if (_healthPoints <= 0)
