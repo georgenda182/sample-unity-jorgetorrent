@@ -1,6 +1,8 @@
 ﻿using _SampleJorgeTorrent.Code.Characters.Performers.Enemies.Skeleton.Services;
 using _SampleJorgeTorrent.Code.Characters.Performers.Player.Services;
 using _SampleJorgeTorrent.Code.Utilities.DesignPatterns.ServiceLocatorPattern;
+using _SampleJorgeTorrent.Code.Utilities.ScriptableProperties;
+using UniRx;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -8,33 +10,58 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Enemies.Skeleton.Action
 {
     public class EnemyChaseAction : PerformerAction
     {
-        private EnemyBrain _enemyBrain;
+        private DistanceToPlayerThresholds _distanceToPlayerThresholds;
+        private DistanceToPlayerCalculator _distanceToPlayerCalculator;
         private NavMeshAgent _enemyNavMeshAgent;
         private Animator _enemyAnimator;
         private Transform _playerTransform;
 
         protected override void StorePerformerServices(ServiceLocator performerServiceLocator)
         {
-            _enemyBrain = performerServiceLocator.GetService<EnemyBrain>();
+            _distanceToPlayerThresholds = performerServiceLocator.GetService<DistanceToPlayerThresholds>();
+            _distanceToPlayerCalculator = performerServiceLocator.GetService<DistanceToPlayerCalculator>();
             _enemyNavMeshAgent = performerServiceLocator.GetService<NavMeshAgent>();
             _enemyAnimator = performerServiceLocator.GetService<Animator>();
-            _playerTransform = performerServiceLocator.GetService<PlayerTransformWrapper>().Value;
+            _playerTransform = performerServiceLocator.GetService<PlayerGlobalServices>().Transform;
         }
 
         protected override void DefinePerformanceConditions()
         {
-            _enemyBrain.OnPlayerAtMidDistance += delegate
+            _distanceToPlayerCalculator.DistanceToPlayer.Subscribe(TriggerPerformanceByDistanceToPlayer);
+            DefineReactivation();
+        }
+
+        private void DefineReactivation()
+        {
+            foreach (BoolProperty prohibitorState in _prohibitorStates)
+            {
+                prohibitorState.Property.Subscribe(TryReactivation);
+            }
+        }
+
+        private void TryReactivation(bool prohibitorStateIsActive)
+        {
+            if (prohibitorStateIsActive)
+            {
+                return;
+            }
+
+            TriggerPerformanceByDistanceToPlayer(_distanceToPlayerCalculator.DistanceToPlayer.Value);
+        }
+
+        private void TriggerPerformanceByDistanceToPlayer(float distanceToPlayer)
+        {
+            float lowDistance = _distanceToPlayerThresholds.LowDistance;
+            float midDistance = _distanceToPlayerThresholds.MidDistance;
+
+            if (distanceToPlayer > lowDistance && distanceToPlayer <= midDistance)
             {
                 PerformIfAllowed();
-            };
-            _enemyBrain.OnPlayerAtLargeDistance += delegate
+            }
+            else
             {
                 CancelIfActive();
-            };
-            _enemyBrain.OnPlayerAtLowDistance += delegate
-            {
-                CancelIfActive();
-            };
+            }
         }
 
         protected override void Perform()

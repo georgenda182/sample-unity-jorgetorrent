@@ -1586,6 +1586,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2788601963082401850, guid: edfe0c09462f8fb4a961ffe9e1b783d4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 136.453
+      objectReference: {fileID: 0}
     - target: {fileID: 3210473734960578275, guid: edfe0c09462f8fb4a961ffe9e1b783d4, type: 3}
       propertyPath: m_Name
       value: GlobalLevelInstaller

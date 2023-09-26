@@ -1,30 +1,60 @@
 using _SampleJorgeTorrent.Code.Characters.Performers.Enemies.Skeleton.Services;
 using _SampleJorgeTorrent.Code.Utilities.DesignPatterns.ServiceLocatorPattern;
+using _SampleJorgeTorrent.Code.Utilities.ScriptableProperties;
+using UniRx;
 using UnityEngine;
 
 namespace _SampleJorgeTorrent.Code.Characters.Performers.Enemies.Skeleton.Actions
 {
     public class EnemyIdleAction : PerformerAction
     {
-        private EnemyBrain _enemyBrain;
+        private DistanceToPlayerThresholds _distanceToPlayerThresholds;
+        private DistanceToPlayerCalculator _distanceToPlayerCalculator;
         private Animator _enemyAnimator;
 
         protected override void StorePerformerServices(ServiceLocator performerServiceLocator)
         {
-            _enemyBrain = performerServiceLocator.GetService<EnemyBrain>();
+            _distanceToPlayerThresholds = performerServiceLocator.GetService<DistanceToPlayerThresholds>();
+            _distanceToPlayerCalculator = performerServiceLocator.GetService<DistanceToPlayerCalculator>();
             _enemyAnimator = performerServiceLocator.GetService<Animator>();
         }
 
         protected override void DefinePerformanceConditions()
         {
-            _enemyBrain.OnPlayerAtLargeDistance += delegate
+            _distanceToPlayerCalculator.DistanceToPlayer.Subscribe(TriggerPerformanceByDistanceToPlayer);
+            DefineReactivation();
+        }
+
+        private void DefineReactivation()
+        {
+            foreach (BoolProperty prohibitorState in _prohibitorStates)
+            {
+                prohibitorState.Property.Subscribe(TryReactivation);
+            }
+        }
+
+        private void TryReactivation(bool prohibitorStateIsActive)
+        {
+            if (prohibitorStateIsActive)
+            {
+                return;
+            }
+
+            TriggerPerformanceByDistanceToPlayer(_distanceToPlayerCalculator.DistanceToPlayer.Value);
+        }
+
+        private void TriggerPerformanceByDistanceToPlayer(float distanceToPlayer)
+        {
+            float midDistance = _distanceToPlayerThresholds.MidDistance;
+
+            if (distanceToPlayer > midDistance)
             {
                 PerformIfAllowed();
-            };
-            _enemyBrain.OnPlayerAtMidDistance += delegate
+            }
+            else
             {
                 CancelIfActive();
-            };
+            }
         }
 
         protected override void Perform()

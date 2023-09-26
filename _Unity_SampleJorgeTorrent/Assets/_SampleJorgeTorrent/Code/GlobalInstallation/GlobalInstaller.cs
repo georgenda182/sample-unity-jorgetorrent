@@ -1,5 +1,6 @@
 using _SampleJorgeTorrent.Code.Characters.Performers.Enemies.Skeleton.Services;
 using _SampleJorgeTorrent.Code.Characters.Performers.Player.Services;
+using _SampleJorgeTorrent.Code.HealthSystem;
 using _SampleJorgeTorrent.Code.Utilities.DesignPatterns.ServiceLocatorPattern;
 using AYellowpaper;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ namespace _SampleJorgeTorrent.Code.GlobalInstallation
         [Header("Services")]
         [SerializeField] private Camera _camera;
         [SerializeField] private Transform _playerTransform;
+        [SerializeField] private Health _playerHealth;
         [SerializeField] private Transform _enemyTransform;
         private GameInputControls _gameInputControls;
 
@@ -31,8 +33,9 @@ namespace _SampleJorgeTorrent.Code.GlobalInstallation
         {
             _globalServiceLocator = new ServiceLocator();
 
-            PlayerTransformWrapper playerTransformWrapper = new PlayerTransformWrapper();
-            playerTransformWrapper.Value = _playerTransform;
+            PlayerGlobalServices playerGlobalServices = new PlayerGlobalServices();
+            playerGlobalServices.Transform = _playerTransform;
+            playerGlobalServices.Health = _playerHealth;
 
             EnemyTransformWrapper enemyTransformWrapper = new EnemyTransformWrapper();
             enemyTransformWrapper.Value = _enemyTransform;
@@ -41,7 +44,7 @@ namespace _SampleJorgeTorrent.Code.GlobalInstallation
             _gameInputControls.Enable();
 
             _globalServiceLocator.RegisterService(_camera);
-            _globalServiceLocator.RegisterService(playerTransformWrapper);
+            _globalServiceLocator.RegisterService(playerGlobalServices);
             _globalServiceLocator.RegisterService(enemyTransformWrapper);
             _globalServiceLocator.RegisterService(_gameInputControls);
         }
