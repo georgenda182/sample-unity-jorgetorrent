@@ -9,12 +9,15 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Player.Actions
     public class PlayerDamageAction : PerformerAction
     {
         [SerializeField] private float _impulseVelocity = 10f;
+        [SerializeField] private float _invulnerabilityDuration = 2.5f;
+        [SerializeField] private float _invulnerabilityBlinkTime = 0.05f;
 
         private Health _playerHealth;
         private Transform _playerTransform;
         private Rigidbody _playerRigidbody;
         private Animator _playerAnimator;
         private AnimationEventsDispatcher _playerAnimationEventsDispatcher;
+        private Renderer _playerRenderer;
         private Material[] _playerMaterials;
         private Transform _enemyTransform;
 
@@ -25,7 +28,8 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Player.Actions
             _playerRigidbody = performerServiceLocator.GetService<Rigidbody>();
             _playerAnimator = performerServiceLocator.GetService<Animator>();
             _playerAnimationEventsDispatcher = performerServiceLocator.GetService<AnimationEventsDispatcher>();
-            _playerMaterials = performerServiceLocator.GetService<Renderer>().materials;
+            _playerRenderer = performerServiceLocator.GetService<Renderer>();
+            _playerMaterials = _playerRenderer.materials;
             _enemyTransform = performerServiceLocator.GetService<EnemyTransformWrapper>().Value;
         }
 
@@ -77,7 +81,27 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Player.Actions
 
         private void EndInvulnerability()
         {
-            _playerHealth.SetVulnerability(true);
+            float invulnerabilityDuration = _invulnerabilityDuration;
+            float momentWhenVisibilityToggled = invulnerabilityDuration - _invulnerabilityBlinkTime;
+            Tween invulnerabilityTween = DOTween.To(() => invulnerabilityDuration, x => invulnerabilityDuration = x, 0, invulnerabilityDuration).SetEase(Ease.Linear);
+            invulnerabilityTween.onUpdate = delegate ()
+            {
+                if (invulnerabilityDuration <= momentWhenVisibilityToggled)
+                {
+                    momentWhenVisibilityToggled -= _invulnerabilityBlinkTime;
+                    ToggleRendererVisibility();
+                }
+            };
+            invulnerabilityTween.onComplete = delegate ()
+            {
+                _playerRenderer.enabled = true;
+                _playerHealth.SetVulnerability(true);
+            };
+        }
+
+        private void ToggleRendererVisibility()
+        {
+            _playerRenderer.enabled = !_playerRenderer.enabled;
         }
     }
 }
