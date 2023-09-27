@@ -24,7 +24,7 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Player.Actions
             _playerRigidbody = performerServiceLocator.GetService<Rigidbody>();
             _playerAnimator = performerServiceLocator.GetService<Animator>();
             _playerMaterials = performerServiceLocator.GetService<Renderer>().materials;
-            _enemyTransform = performerServiceLocator.GetService<EnemyTransformWrapper>().Value;
+            _enemyTransform = performerServiceLocator.GetService<EnemyGlobalServices>().Transform;
         }
 
         protected override void DefinePerformanceConditions()

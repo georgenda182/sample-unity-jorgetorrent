@@ -1586,10 +1586,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2788601963082401850, guid: edfe0c09462f8fb4a961ffe9e1b783d4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 136.453
-      objectReference: {fileID: 0}
     - target: {fileID: 3210473734960578275, guid: edfe0c09462f8fb4a961ffe9e1b783d4, type: 3}
       propertyPath: m_Name
       value: GlobalLevelInstaller
@@ -1637,10 +1633,6 @@ PrefabInstance:
     - target: {fileID: 3210473734960578277, guid: edfe0c09462f8fb4a961ffe9e1b783d4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5531190064896531101, guid: edfe0c09462f8fb4a961ffe9e1b783d4, type: 3}
-      propertyPath: _healthPoints
-      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: edfe0c09462f8fb4a961ffe9e1b783d4, type: 3}

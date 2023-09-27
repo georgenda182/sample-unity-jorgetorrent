@@ -1,27 +1,17 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace _SampleJorgeTorrent.Code.HealthSystem
 {
     [RequireComponent(typeof(Collider))]
-    public class Weapon : MonoBehaviour
+    public abstract class Weapon : MonoBehaviour
     {
-        [SerializeField] private int _healthPointsToSubtract = 25;
+        [SerializeField] protected int _healthPointsToSubtract = 25;
 
-        private Collider _hitVolume;
+        protected Collider _hitVolume;
 
         private void Start()
         {
             _hitVolume = GetComponent<Collider>();
-        }
-
-        public void EnableHitVolume()
-        {
-            _hitVolume.enabled = true;
-        }
-
-        public void DisableHitVolume()
-        {
-            _hitVolume.enabled = false;
         }
 
         private void OnTriggerEnter(Collider other)

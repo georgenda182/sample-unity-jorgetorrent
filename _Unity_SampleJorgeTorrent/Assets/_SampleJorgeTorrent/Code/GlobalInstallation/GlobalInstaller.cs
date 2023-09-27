@@ -15,6 +15,7 @@ namespace _SampleJorgeTorrent.Code.GlobalInstallation
         [SerializeField] private Transform _playerTransform;
         [SerializeField] private Health _playerHealth;
         [SerializeField] private Transform _enemyTransform;
+        [SerializeField] private Health _enemyHealth;
         private GameInputControls _gameInputControls;
 
         [Header("Consumers")]
@@ -37,8 +38,9 @@ namespace _SampleJorgeTorrent.Code.GlobalInstallation
             playerGlobalServices.Transform = _playerTransform;
             playerGlobalServices.Health = _playerHealth;
 
-            EnemyTransformWrapper enemyTransformWrapper = new EnemyTransformWrapper();
-            enemyTransformWrapper.Value = _enemyTransform;
+            EnemyGlobalServices enemyTransformWrapper = new EnemyGlobalServices();
+            enemyTransformWrapper.Transform = _enemyTransform;
+            enemyTransformWrapper.Health = _enemyHealth;
 
             _gameInputControls = new GameInputControls();
             _gameInputControls.Enable();

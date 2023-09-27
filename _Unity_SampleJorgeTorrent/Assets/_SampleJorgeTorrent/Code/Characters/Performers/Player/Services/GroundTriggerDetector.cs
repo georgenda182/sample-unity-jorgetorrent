@@ -13,7 +13,11 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Player.Services
 
         private void OnTriggerEnter(Collider other)
         {
-            AddGroundAndCallEventIfConvenient(other.GetInstanceID());
+            bool triggeredAgainstGround = other.gameObject.layer == LayerMask.NameToLayer("Ground");
+            if (triggeredAgainstGround)
+            {
+                AddGroundAndCallEventIfConvenient(other.GetInstanceID());
+            }
         }
 
         private void AddGroundAndCallEventIfConvenient(int groundId)
@@ -30,7 +34,11 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Player.Services
 
         private void OnTriggerExit(Collider other)
         {
-            RemoveGroundAndCallEventIfConvenient(other.GetInstanceID());
+            bool triggeredAgainstGround = other.gameObject.layer == LayerMask.NameToLayer("Ground");
+            if (triggeredAgainstGround)
+            {
+                RemoveGroundAndCallEventIfConvenient(other.GetInstanceID());
+            }
         }
 
         private void RemoveGroundAndCallEventIfConvenient(int groundId)

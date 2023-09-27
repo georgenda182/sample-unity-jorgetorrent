@@ -12,30 +12,24 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Enemies.Skeleton.Action
     {
         private DistanceToPlayerThresholds _distanceToPlayerThresholds;
         private DistanceToPlayerCalculator _distanceToPlayerCalculator;
-        private Weapon _enemyWeapon;
+        private EnemyWeapon _enemyWeapon;
         private Transform _enemyTransform;
         private Animator _enemyAnimator;
-        private AnimationEventsDispatcher _enemyAnimationEventsDispatcher;
         private Transform _playerTransform;
 
         protected override void StorePerformerServices(ServiceLocator performerServiceLocator)
         {
             _distanceToPlayerThresholds = performerServiceLocator.GetService<DistanceToPlayerThresholds>();
             _distanceToPlayerCalculator = performerServiceLocator.GetService<DistanceToPlayerCalculator>();
-            _enemyWeapon = performerServiceLocator.GetService<Weapon>();
+            _enemyWeapon = performerServiceLocator.GetService<EnemyWeapon>();
             _enemyTransform = performerServiceLocator.GetService<Transform>();
             _enemyAnimator = performerServiceLocator.GetService<Animator>();
-            _enemyAnimationEventsDispatcher = performerServiceLocator.GetService<AnimationEventsDispatcher>();
             _playerTransform = performerServiceLocator.GetService<PlayerGlobalServices>().Transform;
         }
 
         protected override void DefinePerformanceConditions()
         {
             _distanceToPlayerCalculator.DistanceToPlayer.Subscribe(TriggerPerformanceByDistanceToPlayer);
-
-            _enemyAnimationEventsDispatcher.SubscribeEventCallbackToAnimation("OnAttackStarted", EnableWeaponHitVolume);
-            _enemyAnimationEventsDispatcher.SubscribeEventCallbackToAnimation("OnAttackFinished", DisableWeaponHitVolume);
-
             DefineReactivation();
         }
 
@@ -71,16 +65,6 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Enemies.Skeleton.Action
             }
         }
 
-        private void EnableWeaponHitVolume()
-        {
-            _enemyWeapon.EnableHitVolume();
-        }
-
-        private void DisableWeaponHitVolume()
-        {
-            _enemyWeapon.DisableHitVolume();
-        }
-
         protected override void Perform()
         {
             _enemyAnimator.SetBool("IsAttacking", true);
@@ -89,6 +73,7 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Enemies.Skeleton.Action
         protected override void Cancel()
         {
             _enemyAnimator.SetBool("IsAttacking", false);
+            _enemyWeapon.DisableHitVolume();
         }
 
         private void Update()

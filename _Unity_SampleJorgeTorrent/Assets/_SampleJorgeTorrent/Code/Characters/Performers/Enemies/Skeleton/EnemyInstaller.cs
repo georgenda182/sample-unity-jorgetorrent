@@ -18,10 +18,12 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Enemies.Skeleton
     public class EnemyInstaller : Performer, ServicesConsumer
     {
         [Header("Services")]
-        [SerializeField] private DistanceToPlayerCalculator _enemyBrain;
-        [SerializeField] private Weapon _enemyWeapon;
+        [SerializeField] private DistanceToPlayerCalculator _distanceToPlayerCalculator;
+        [SerializeField] private Health _enemyHealth;
+        [SerializeField] private EnemyWeapon _enemyWeapon;
         [SerializeField] private Transform _enemyTransform;
         [SerializeField] private NavMeshAgent _enemyNavMeshAgent;
+        [SerializeField] private Renderer _enemyRenderer;
         [SerializeField] private Animator _enemyAnimator;
         [SerializeField] private AnimationEventsDispatcher _enemyAnimationEventsDispatcher;
 
@@ -33,7 +35,7 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Enemies.Skeleton
         {
             StoreGlobalServices(globalServiceLocator);
             ConfigureEnemyServiceLocator();
-            InitializeBrain();
+            InitializeOwnServices();
             InstallActions();
         }
 
@@ -46,19 +48,22 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Enemies.Skeleton
         {
             _enemyAnimationEventsDispatcher.Configure();
 
-            _performerServiceLocator.RegisterService(_enemyBrain);
+            _performerServiceLocator.RegisterService(_distanceToPlayerCalculator);
+            _performerServiceLocator.RegisterService(_enemyHealth);
             _performerServiceLocator.RegisterService(_enemyWeapon);
             _performerServiceLocator.RegisterService(_enemyTransform);
             _performerServiceLocator.RegisterService(_enemyNavMeshAgent);
+            _performerServiceLocator.RegisterService(_enemyRenderer);
             _performerServiceLocator.RegisterService(_enemyAnimator);
             _performerServiceLocator.RegisterService(_enemyAnimationEventsDispatcher);
             _performerServiceLocator.RegisterService(_distanceToPlayerThresholds);
             _performerServiceLocator.RegisterService(_playerGlobalServices);
         }
 
-        private void InitializeBrain()
+        private void InitializeOwnServices()
         {
-            _enemyBrain.Install(_performerServiceLocator);
+            _distanceToPlayerCalculator.Install(_performerServiceLocator);
+            _enemyWeapon.Install(_performerServiceLocator);
         }
     }
 }

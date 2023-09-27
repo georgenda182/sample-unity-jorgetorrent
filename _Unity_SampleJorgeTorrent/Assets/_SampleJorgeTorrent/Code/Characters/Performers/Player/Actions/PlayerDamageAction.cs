@@ -30,7 +30,7 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Player.Actions
             _playerAnimationEventsDispatcher = performerServiceLocator.GetService<AnimationEventsDispatcher>();
             _playerRenderer = performerServiceLocator.GetService<Renderer>();
             _playerMaterials = _playerRenderer.materials;
-            _enemyTransform = performerServiceLocator.GetService<EnemyTransformWrapper>().Value;
+            _enemyTransform = performerServiceLocator.GetService<EnemyGlobalServices>().Transform;
         }
 
         protected override void DefinePerformanceConditions()

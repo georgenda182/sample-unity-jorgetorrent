@@ -20,7 +20,7 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Player
 
         private Camera _playerCamera;
         private PlayerMaths _playerMaths;
-        private EnemyTransformWrapper _enemyTransform;
+        private EnemyGlobalServices _enemyGlobalServices;
 
         public void Install(ServiceLocator globalServiceLocator)
         {
@@ -34,7 +34,7 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Player
         {
             _playerInputControls = globalServiceLocator.GetService<GameInputControls>();
             _playerCamera = globalServiceLocator.GetService<Camera>();
-            _enemyTransform = globalServiceLocator.GetService<EnemyTransformWrapper>();
+            _enemyGlobalServices = globalServiceLocator.GetService<EnemyGlobalServices>();
         }
 
         private void ConfigurePlayerServiceLocator()
@@ -52,7 +52,7 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Player
             _performerServiceLocator.RegisterService(_playerRenderer);
             _performerServiceLocator.RegisterService<GroundDetector>(_groundDetector);
             _performerServiceLocator.RegisterService(_playerMaths);
-            _performerServiceLocator.RegisterService(_enemyTransform);
+            _performerServiceLocator.RegisterService(_enemyGlobalServices);
         }
 
         private void InstallOtherServicesConsumers()
