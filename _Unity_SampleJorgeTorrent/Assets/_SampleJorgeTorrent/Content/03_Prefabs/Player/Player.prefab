@@ -1007,7 +1007,7 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.06
-  m_Height: 0.8
+  m_Height: 0.9
   m_Direction: 1
   m_Center: {x: 0, y: 0.6, z: 0}
 --- !u!1 &4378726025948287938
@@ -1502,6 +1502,8 @@ MonoBehaviour:
   _prohibitorStates:
   - {fileID: 11400000, guid: d80fbd966b9e27e4ca72f536e2193ac2, type: 2}
   _impulseVelocity: 10
+  _invulnerabilityDuration: 2.5
+  _invulnerabilityBlinkTime: 0.05
 --- !u!1 &8553261940338737045
 GameObject:
   m_ObjectHideFlags: 0

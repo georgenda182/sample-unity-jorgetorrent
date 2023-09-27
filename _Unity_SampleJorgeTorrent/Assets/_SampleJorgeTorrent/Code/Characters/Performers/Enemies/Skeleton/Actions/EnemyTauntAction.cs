@@ -24,7 +24,6 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Enemies.Skeleton.Action
         protected override void DefinePerformanceConditions()
         {
             _playerHealth.OnDamaged += PerformIfAllowed;
-            _playerHealth.OnKilled += PerformIfAllowed;
             _enemyAnimationEventsDispatcher.SubscribeEventCallbackToAnimation("OnFinishedTaunting", CancelIfActive);
         }
 
