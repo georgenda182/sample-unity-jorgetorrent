@@ -8,6 +8,7 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Enemies.Skeleton.Action
 {
     public class EnemyDamageAction : PerformerAction
     {
+        [SerializeField] private float _backwardDistance = 1.5f;
         private Transform _enemyTransform;
         private Material[] _enemyMaterials;
         private Animator _enemyAnimator;
@@ -35,7 +36,7 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Enemies.Skeleton.Action
         protected override void Perform()
         {
             StartInvulnerability();
-            LookAtPlayer();
+            SetImpulseAndDirection();
             SetDamageGraphicalResponse();
         }
 
@@ -44,13 +45,15 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Enemies.Skeleton.Action
             _enemyHealth.SetVulnerability(false);
         }
 
-        private void LookAtPlayer()
+        private void SetImpulseAndDirection()
         {
             Vector3 forwardToPlayer = _playerTransform.position - _enemyTransform.position;
             forwardToPlayer.y = 0;
             forwardToPlayer.Normalize();
             Vector3 rotationFromForward = Quaternion.LookRotation(forwardToPlayer).eulerAngles;
             _enemyTransform.DORotate(rotationFromForward, 0.5f);
+            Vector3 endPosition = _enemyTransform.position - forwardToPlayer * _backwardDistance;
+            _enemyTransform.DOMove(endPosition, 0.5f);
         }
 
         private void SetDamageGraphicalResponse()

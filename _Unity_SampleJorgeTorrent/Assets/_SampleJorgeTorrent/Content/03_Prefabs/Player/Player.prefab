@@ -1109,7 +1109,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e2db80d2fbca634bbb0d55db410e044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthPoints: 100
+  _initialHealthPoints: 100
+  _healthPoints: {fileID: 11400000, guid: 1fc1002cc8983b94ca2e77f2a4ec6435, type: 2}
 --- !u!136 &4655357970972005384
 CapsuleCollider:
   m_ObjectHideFlags: 0

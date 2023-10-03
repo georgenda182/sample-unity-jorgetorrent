@@ -781,7 +781,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e2db80d2fbca634bbb0d55db410e044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthPoints: 100
+  _initialHealthPoints: 100
+  _healthPoints: {fileID: 11400000, guid: f0aa76576e7b63c44bae5cb62854a0e1, type: 2}
 --- !u!1 &5828425508309780031
 GameObject:
   m_ObjectHideFlags: 0
@@ -1405,6 +1406,7 @@ MonoBehaviour:
   _prohibitorStates:
   - {fileID: 11400000, guid: 293571f0aac8c4f46b6dd3dac3f0977c, type: 2}
   - {fileID: 11400000, guid: b8325aaafe767fc469c2e618360cf2c5, type: 2}
+  _backwardDistance: 2
 --- !u!1 &7506759948765017222
 GameObject:
   m_ObjectHideFlags: 0

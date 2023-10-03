@@ -1,6 +1,7 @@
 using _SampleJorgeTorrent.Code.Characters.Performers.Enemies.Skeleton.Services;
 using _SampleJorgeTorrent.Code.Characters.Performers.Player.Services;
 using _SampleJorgeTorrent.Code.HealthSystem;
+using _SampleJorgeTorrent.Code.UI;
 using _SampleJorgeTorrent.Code.Utilities.DesignPatterns.ServiceLocatorPattern;
 using AYellowpaper;
 using System.Collections.Generic;
@@ -14,8 +15,10 @@ namespace _SampleJorgeTorrent.Code.GlobalInstallation
         [SerializeField] private Camera _camera;
         [SerializeField] private Transform _playerTransform;
         [SerializeField] private Health _playerHealth;
+        [SerializeField] private HealthVisualizer _playerHealthVisualizer;
         [SerializeField] private Transform _enemyTransform;
         [SerializeField] private Health _enemyHealth;
+        [SerializeField] private HealthVisualizer _enemyHealthVisualizer;
         private GameInputControls _gameInputControls;
 
         [Header("Consumers")]
@@ -36,11 +39,15 @@ namespace _SampleJorgeTorrent.Code.GlobalInstallation
 
             PlayerGlobalServices playerGlobalServices = new PlayerGlobalServices();
             playerGlobalServices.Transform = _playerTransform;
+            _playerHealth.Initialize();
             playerGlobalServices.Health = _playerHealth;
+            _playerHealthVisualizer.Initialize();
 
             EnemyGlobalServices enemyTransformWrapper = new EnemyGlobalServices();
             enemyTransformWrapper.Transform = _enemyTransform;
+            _enemyHealth.Initialize();
             enemyTransformWrapper.Health = _enemyHealth;
+            _enemyHealthVisualizer.Initialize();
 
             _gameInputControls = new GameInputControls();
             _gameInputControls.Enable();
@@ -61,9 +68,16 @@ namespace _SampleJorgeTorrent.Code.GlobalInstallation
 
         private void ReparentChildrenToRootAndDestroySelf()
         {
-            _camera.transform.parent = null;
-            _playerTransform.parent = null;
-            _enemyTransform.parent = null;
+            List<Transform> children = new List<Transform>();
+
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                children.Add(transform.GetChild(i));
+            }
+            foreach (Transform child in children)
+            {
+                child.parent = null;
+            }
 
             Destroy(gameObject);
         }
