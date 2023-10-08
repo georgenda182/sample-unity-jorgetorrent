@@ -9,16 +9,11 @@ using UnityEngine;
 
 namespace _SampleJorgeTorrent.Code.GlobalInstallation
 {
-    public class GlobalInstaller : MonoBehaviour
+    public class VillageLevelInstaller : MonoBehaviour
     {
         [Header("Services")]
         [SerializeField] private Camera _camera;
         [SerializeField] private Transform _playerTransform;
-        [SerializeField] private Health _playerHealth;
-        [SerializeField] private HealthVisualizer _playerHealthVisualizer;
-        [SerializeField] private Transform _enemyTransform;
-        [SerializeField] private Health _enemyHealth;
-        [SerializeField] private HealthVisualizer _enemyHealthVisualizer;
         private GameInputControls _gameInputControls;
 
         [Header("Consumers")]
@@ -37,24 +32,10 @@ namespace _SampleJorgeTorrent.Code.GlobalInstallation
         {
             _globalServiceLocator = new ServiceLocator();
 
-            PlayerGlobalServices playerGlobalServices = new PlayerGlobalServices();
-            playerGlobalServices.Transform = _playerTransform;
-            _playerHealth.Initialize();
-            playerGlobalServices.Health = _playerHealth;
-            _playerHealthVisualizer.Initialize();
-
-            EnemyGlobalServices enemyTransformWrapper = new EnemyGlobalServices();
-            enemyTransformWrapper.Transform = _enemyTransform;
-            _enemyHealth.Initialize();
-            enemyTransformWrapper.Health = _enemyHealth;
-            _enemyHealthVisualizer.Initialize();
-
             _gameInputControls = new GameInputControls();
             _gameInputControls.Enable();
 
             _globalServiceLocator.RegisterService(_camera);
-            _globalServiceLocator.RegisterService(playerGlobalServices);
-            _globalServiceLocator.RegisterService(enemyTransformWrapper);
             _globalServiceLocator.RegisterService(_gameInputControls);
         }
 
@@ -76,7 +57,7 @@ namespace _SampleJorgeTorrent.Code.GlobalInstallation
             }
             foreach (Transform child in children)
             {
-                child.parent = null;
+                child.SetParent(null);
             }
 
             Destroy(gameObject);
