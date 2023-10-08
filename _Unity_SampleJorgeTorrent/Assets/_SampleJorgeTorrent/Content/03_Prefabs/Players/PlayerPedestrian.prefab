@@ -695,6 +695,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6326112568002885238}
+  - {fileID: 2628581842667993069}
   m_Father: {fileID: 667717012232519822}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -748,6 +749,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6deedc123b41166459c85e48973ea28e, type: 2}
   - {fileID: 11400000, guid: d0086792092208744bf993e57214afb1, type: 2}
   - {fileID: 11400000, guid: d80fbd966b9e27e4ca72f536e2193ac2, type: 2}
+  - {fileID: 11400000, guid: 0a7f6588c768b414480764eca93498fb, type: 2}
   _forceMagnitude: 500
 --- !u!1 &3372263236528121008
 GameObject:
@@ -1139,6 +1141,65 @@ Transform:
   m_Father: {fileID: 852001466809226617}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6720418537500363435
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2628581842667993069}
+  - component: {fileID: 1114904559622153722}
+  - component: {fileID: 4375246527665284043}
+  m_Layer: 7
+  m_Name: JumpAvoiderOnInteractAbility
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2628581842667993069
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6720418537500363435}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1517105739338778380}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1114904559622153722
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6720418537500363435}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.12
+  m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &4375246527665284043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6720418537500363435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58ed1849cdc7eb34ab91474d1e1fbec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _canInteractWithEntity: {fileID: 11400000, guid: 0a7f6588c768b414480764eca93498fb, type: 2}
 --- !u!1 &6819475290887506121
 GameObject:
   m_ObjectHideFlags: 0

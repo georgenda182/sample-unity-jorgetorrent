@@ -10,10 +10,11 @@ namespace _SampleJorgeTorrent.Code.DialogSystem
         [SerializeField] private DialogBars _dialogBars;
         [SerializeField] private DialogSpeechBubble _dialogSpeechBubble;
 
-        protected Queue<Dialog> _dialogs;
+        protected List<Dialog> _dialogs;
+        private int _currentDialogIndex = 0;
 
-        private ServiceLocator _dialogsServiceLocator;
-        private GameInputControls _gameInputControls;
+        protected ServiceLocator _dialogsServiceLocator;
+        protected GameInputControls _gameInputControls;
         private DialogsContext _dialogsContext;
 
         private Dialog _previousDialog;
@@ -24,7 +25,6 @@ namespace _SampleJorgeTorrent.Code.DialogSystem
             RegisterServices(globalServiceLocator);
             InitializeContext();
             InitializeDialogs();
-            StartDialogs();
         }
 
         private void RegisterServices(ServiceLocator globalServiceLocator)
@@ -51,7 +51,7 @@ namespace _SampleJorgeTorrent.Code.DialogSystem
 
         private void InitializeDialogs()
         {
-            _dialogs = new Queue<Dialog>();
+            _dialogs = new List<Dialog>();
             DefineDialogs();
             foreach (Dialog dialog in _dialogs)
             {
@@ -61,7 +61,7 @@ namespace _SampleJorgeTorrent.Code.DialogSystem
 
         protected abstract void DefineDialogs();
 
-        private void StartDialogs()
+        protected void StartDialogs()
         {
             _dialogsContext.Mount();
             DispatchDialog();
@@ -69,20 +69,28 @@ namespace _SampleJorgeTorrent.Code.DialogSystem
 
         private void DispatchDialog()
         {
-            bool anyDialogRemaining = _dialogs.Count > 0;
+            bool anyDialogRemaining = _currentDialogIndex < _dialogs.Count;
             if (anyDialogRemaining)
             {
                 _previousDialog = _currentDialog;
-                _currentDialog = _dialogs.Dequeue();
+                _currentDialog = _dialogs[_currentDialogIndex];
 
                 _previousDialog?.Close();
                 _currentDialog?.Show();
+
+                _currentDialogIndex++;
             }
             else
             {
                 _currentDialog.Close();
                 _dialogsContext.Unmount();
+                Reset();
             }
+        }
+
+        private void Reset()
+        {
+            _currentDialogIndex = 0;
         }
     }
 }

@@ -50,7 +50,7 @@ namespace _SampleJorgeTorrent.Code.GlobalInstallation
             _enemyHealthVisualizer.Initialize();
 
             _gameInputControls = new GameInputControls();
-            _gameInputControls.Enable();
+            _gameInputControls.Menus.Enable();
 
             _globalServiceLocator.RegisterService(_camera);
             _globalServiceLocator.RegisterService(playerGlobalServices);

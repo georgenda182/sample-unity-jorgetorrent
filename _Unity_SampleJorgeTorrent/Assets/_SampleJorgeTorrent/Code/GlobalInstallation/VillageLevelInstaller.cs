@@ -33,7 +33,7 @@ namespace _SampleJorgeTorrent.Code.GlobalInstallation
             _globalServiceLocator = new ServiceLocator();
 
             _gameInputControls = new GameInputControls();
-            _gameInputControls.Enable();
+            _gameInputControls.Player.Enable();
 
             _globalServiceLocator.RegisterService(_camera);
             _globalServiceLocator.RegisterService(_gameInputControls);
