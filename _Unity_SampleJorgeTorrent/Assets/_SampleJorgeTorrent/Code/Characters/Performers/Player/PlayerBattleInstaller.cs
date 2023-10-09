@@ -2,11 +2,13 @@ using _SampleJorgeTorrent.Code.Characters.Performers.Enemies.Skeleton.Services;
 using _SampleJorgeTorrent.Code.Characters.Performers.Player.Services;
 using _SampleJorgeTorrent.Code.HealthSystem;
 using _SampleJorgeTorrent.Code.Utilities.DesignPatterns.ServiceLocatorPattern;
+using AYellowpaper;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace _SampleJorgeTorrent.Code.Characters.Performers.Player
 {
-    public class PlayerWarriorInstaller : Performer, ServicesConsumer
+    public class PlayerBattleInstaller : Performer, ServicesConsumer
     {
         private GameInputControls _playerInputControls;
 
@@ -17,6 +19,9 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Player
         [SerializeField] private AnimationEventsDispatcher _playerAnimationEventsDispatcher;
         [SerializeField] private Renderer _playerRenderer;
         [SerializeField] private GroundTriggerDetector _groundDetector;
+
+        [Header("Consumers")]
+        [SerializeField] private List<InterfaceReference<ServicesConsumer>> _servicesConsumers;
 
         private Camera _playerCamera;
         private PlayerMaths _playerMaths;
@@ -58,6 +63,10 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Player
         private void InstallOtherServicesConsumers()
         {
             _playerMaths.Install(_performerServiceLocator);
+            foreach (var consumer in _servicesConsumers)
+            {
+                consumer.Value.Install(_performerServiceLocator);
+            }
         }
     }
 }

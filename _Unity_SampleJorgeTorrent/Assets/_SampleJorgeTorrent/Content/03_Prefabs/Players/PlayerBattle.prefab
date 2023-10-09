@@ -164,6 +164,8 @@ MonoBehaviour:
   _playerAnimationEventsDispatcher: {fileID: 8320193337747407009}
   _playerRenderer: {fileID: 4099455066733560877}
   _groundDetector: {fileID: 492444772511611952}
+  _servicesConsumers:
+  - _underlyingValue: {fileID: 7451525268698063939}
 --- !u!54 &736556594
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -799,6 +801,7 @@ Transform:
   - {fileID: 6326112568002885238}
   - {fileID: 8588603204809760802}
   - {fileID: 8905384661490830950}
+  - {fileID: 2935943154337663612}
   m_Father: {fileID: 667717012232519822}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1219,6 +1222,52 @@ Transform:
   m_Father: {fileID: 3342704243726042365}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5138031570045362416
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2935943154337663612}
+  - component: {fileID: 7451525268698063939}
+  m_Layer: 7
+  m_Name: PlayerHeartSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2935943154337663612
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5138031570045362416}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1517105739338778380}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7451525268698063939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5138031570045362416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feb4f61992c461945841ccd596dd55a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _heart: {fileID: 6448552892010714933, guid: 8737ed222298a474191b5b5de067bf10, type: 3}
+  _spawnMaxDistance: 5
 --- !u!1 &5647320336498114895
 GameObject:
   m_ObjectHideFlags: 0
