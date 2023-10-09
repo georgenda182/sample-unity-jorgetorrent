@@ -24,10 +24,20 @@ namespace _SampleJorgeTorrent.Code.UI
 
         private void VisualizeHealthPoints(int healthPoints)
         {
+            bool healthHasIncreased = _currentHealthPoints < healthPoints;
+
             _currentHealthPoints = healthPoints;
             float fillAmount = CalculateHealthBarFillAmount();
-            _healthBar.fillAmount = fillAmount;
-            _healthBarShadow.DOFillAmount(fillAmount, 0.4f).SetDelay(0.5f);
+            if (healthHasIncreased)
+            {
+                _healthBarShadow.fillAmount = fillAmount;
+                _healthBar.DOFillAmount(fillAmount, 0.4f).SetDelay(0.5f);
+            }
+            else
+            {
+                _healthBar.fillAmount = fillAmount;
+                _healthBarShadow.DOFillAmount(fillAmount, 0.4f).SetDelay(0.5f);
+            }
         }
 
         private float CalculateHealthBarFillAmount()
