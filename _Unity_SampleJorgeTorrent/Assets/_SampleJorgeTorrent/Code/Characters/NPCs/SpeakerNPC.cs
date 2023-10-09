@@ -1,20 +1,17 @@
 using _SampleJorgeTorrent.Code.DialogSystem;
-using DG.Tweening;
+using _SampleJorgeTorrent.Code.UI;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace _SampleJorgeTorrent.Code.Characters.NPCs
 {
     [RequireComponent(typeof(SphereCollider))]
     public class SpeakerNPC : DialogsDispatcher
     {
-        [SerializeField] private Image _interactionMark;
+        [SerializeField] private Transform _interactionMarkTarget;
         [SerializeField] private string[] _texts;
 
-        private Tween _interactionMarkVisibilityTween;
-
+        private InteractionMark _interactionMark;
         private bool _canSpeak;
-        private bool _interactionMarkVisibilityTweenPlaying;
 
         protected override void DefineDialogs()
         {
@@ -22,6 +19,7 @@ namespace _SampleJorgeTorrent.Code.Characters.NPCs
             {
                 _dialogs.Add(new DialogWithText(text));
             }
+            _interactionMark = _globalServiceLocator.GetService<InteractionMark>();
             SubscribeDialogPerformanceToInput();
         }
 
@@ -38,60 +36,24 @@ namespace _SampleJorgeTorrent.Code.Characters.NPCs
             }
         }
 
-        private void Update()
+        private void OnTriggerEnter(Collider other)
         {
             if (_canSpeak)
             {
-
+                return;
             }
-        }
-
-        private void OnTriggerEnter(Collider other)
-        {
             _canSpeak = true;
-            ShowInteractionMark();
-        }
-
-        private void ShowInteractionMark()
-        {
-            if (_interactionMarkVisibilityTweenPlaying)
-            {
-                _interactionMarkVisibilityTween.Complete(false);
-            }
-            _interactionMarkVisibilityTween = _interactionMark.DOFade(1, 0.35f);
-            _interactionMarkVisibilityTween.onPlay = delegate
-            {
-                _interactionMarkVisibilityTweenPlaying = true;
-                _interactionMark.gameObject.SetActive(true);
-            };
-            _interactionMarkVisibilityTween.onComplete = delegate
-            {
-                _interactionMarkVisibilityTweenPlaying = false;
-            };
+            _interactionMark.Show(_interactionMarkTarget);
         }
 
         private void OnTriggerExit(Collider other)
         {
-            _canSpeak = false;
-            HideInteractionMark();
-        }
-
-        private void HideInteractionMark()
-        {
-            if (_interactionMarkVisibilityTweenPlaying)
+            if (!_canSpeak)
             {
-                _interactionMarkVisibilityTween.Complete(false);
+                return;
             }
-            _interactionMarkVisibilityTween = _interactionMark.DOFade(0, 0.35f);
-            _interactionMarkVisibilityTween.onPlay = delegate
-            {
-                _interactionMarkVisibilityTweenPlaying = true;
-            };
-            _interactionMarkVisibilityTween.onComplete = delegate
-            {
-                _interactionMarkVisibilityTweenPlaying = false;
-                _interactionMark.gameObject.SetActive(false);
-            };
+            _canSpeak = false;
+            _interactionMark.Hide();
         }
     }
 }

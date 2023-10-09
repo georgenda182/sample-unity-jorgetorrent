@@ -1,6 +1,3 @@
-using _SampleJorgeTorrent.Code.Characters.Performers.Enemies.Skeleton.Services;
-using _SampleJorgeTorrent.Code.Characters.Performers.Player.Services;
-using _SampleJorgeTorrent.Code.HealthSystem;
 using _SampleJorgeTorrent.Code.UI;
 using _SampleJorgeTorrent.Code.Utilities.DesignPatterns.ServiceLocatorPattern;
 using AYellowpaper;
@@ -14,6 +11,7 @@ namespace _SampleJorgeTorrent.Code.GlobalInstallation
         [Header("Services")]
         [SerializeField] private Camera _camera;
         [SerializeField] private Transform _playerTransform;
+        [SerializeField] private InteractionMark _interactionMark;
         private GameInputControls _gameInputControls;
 
         [Header("Consumers")]
@@ -36,6 +34,7 @@ namespace _SampleJorgeTorrent.Code.GlobalInstallation
             _gameInputControls.Player.Enable();
 
             _globalServiceLocator.RegisterService(_camera);
+            _globalServiceLocator.RegisterService(_interactionMark);
             _globalServiceLocator.RegisterService(_gameInputControls);
         }
 

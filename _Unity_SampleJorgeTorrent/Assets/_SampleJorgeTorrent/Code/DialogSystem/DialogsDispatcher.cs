@@ -13,6 +13,7 @@ namespace _SampleJorgeTorrent.Code.DialogSystem
         protected List<Dialog> _dialogs;
         private int _currentDialogIndex = 0;
 
+        protected ServiceLocator _globalServiceLocator;
         protected ServiceLocator _dialogsServiceLocator;
         protected GameInputControls _gameInputControls;
         private DialogsContext _dialogsContext;
@@ -29,6 +30,8 @@ namespace _SampleJorgeTorrent.Code.DialogSystem
 
         private void RegisterServices(ServiceLocator globalServiceLocator)
         {
+            _globalServiceLocator = globalServiceLocator;
+
             _dialogsServiceLocator = new ServiceLocator();
 
             _gameInputControls = globalServiceLocator.GetService<GameInputControls>();

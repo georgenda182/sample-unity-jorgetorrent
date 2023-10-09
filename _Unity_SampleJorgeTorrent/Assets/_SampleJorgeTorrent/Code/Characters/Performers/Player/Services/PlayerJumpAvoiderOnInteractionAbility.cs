@@ -3,7 +3,6 @@ using UnityEngine;
 
 namespace _SampleJorgeTorrent.Code.Characters.Performers.Player.Services
 {
-    [RequireComponent(typeof(SphereCollider))]
     public class PlayerJumpAvoiderOnInteractionAbility : MonoBehaviour
     {
         [SerializeField] private BoolProperty _canInteractWithEntity;
