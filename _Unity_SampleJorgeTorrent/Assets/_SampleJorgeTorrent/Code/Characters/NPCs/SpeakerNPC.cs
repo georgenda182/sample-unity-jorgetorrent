@@ -17,7 +17,7 @@ namespace _SampleJorgeTorrent.Code.Characters.NPCs
         {
             foreach (string text in _texts)
             {
-                _dialogs.Add(new DialogWithText(text));
+                AddDialog(new DialogWithText(text));
             }
             _interactionMark = _globalServiceLocator.GetService<InteractionMark>();
             SubscribeDialogPerformanceToInput();

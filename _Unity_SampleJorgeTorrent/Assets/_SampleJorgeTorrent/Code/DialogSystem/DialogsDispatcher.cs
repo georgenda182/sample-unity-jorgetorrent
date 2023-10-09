@@ -10,7 +10,7 @@ namespace _SampleJorgeTorrent.Code.DialogSystem
         [SerializeField] private DialogBars _dialogBars;
         [SerializeField] private DialogSpeechBubble _dialogSpeechBubble;
 
-        protected List<Dialog> _dialogs;
+        private List<Dialog> _dialogs;
         private int _currentDialogIndex = 0;
 
         protected ServiceLocator _globalServiceLocator;
@@ -63,6 +63,12 @@ namespace _SampleJorgeTorrent.Code.DialogSystem
         }
 
         protected abstract void DefineDialogs();
+
+        protected void AddDialog(Dialog newDialog)
+        {
+            _dialogs.Add(newDialog);
+            newDialog.Install(_dialogsServiceLocator);
+        }
 
         protected void StartDialogs()
         {

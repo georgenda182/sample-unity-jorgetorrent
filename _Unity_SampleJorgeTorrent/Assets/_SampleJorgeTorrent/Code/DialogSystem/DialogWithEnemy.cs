@@ -4,11 +4,12 @@
     {
         protected override void DefineDialogs()
         {
-            _dialogs.Add(new DialogWithText("There you are, you vermin."));
-            _dialogs.Add(new DialogWithText("After that I got osteoarthritis and I was never the same again."));
-            _dialogs.Add(new DialogWithText("And all because of you."));
-            _dialogs.Add(new DialogWithText("I'll never forgive you for taking the milk out of your grocery store."));
-            _dialogs.Add(new DialogWithText("Prepare to die, you bastard."));
+            AddDialog(new DialogWithText("There you are, you vermin."));
+            AddDialog(new DialogWithText("After that I got osteoarthritis and I was never the same again."));
+            AddDialog(new DialogWithText("And all because of you."));
+            AddDialog(new DialogWithText("I'll never forgive you for taking the milk out of your grocery store."));
+            AddDialog(new DialogWithText("Prepare to die, you bastard."));
+            StartDialogs();
         }
     }
 }
