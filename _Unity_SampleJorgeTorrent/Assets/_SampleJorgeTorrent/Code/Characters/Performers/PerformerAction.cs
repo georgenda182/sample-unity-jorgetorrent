@@ -93,6 +93,7 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers
 
         private void OnDestroy()
         {
+            _state.Property.Dispose();
             DeactivateState();
         }
     }

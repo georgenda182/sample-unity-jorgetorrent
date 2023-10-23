@@ -758,11 +758,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _camera: {fileID: 547569973874328259}
   _playerTransform: {fileID: 3252625142404227656}
+  _interactionMark: {fileID: 1082604260}
   _servicesConsumers:
   - _underlyingValue: {fileID: 547569973874328257}
   - _underlyingValue: {fileID: 7771791089467290431}
   - _underlyingValue: {fileID: 1082604260}
   - _underlyingValue: {fileID: 2623223914976966882}
+  - _underlyingValue: {fileID: 0}
 --- !u!1001 &1318869402339444009
 PrefabInstance:
   m_ObjectHideFlags: 0

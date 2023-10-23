@@ -2,7 +2,6 @@
 using _SampleJorgeTorrent.Code.HealthSystem;
 using _SampleJorgeTorrent.Code.Utilities.DesignPatterns.ServiceLocatorPattern;
 using DG.Tweening;
-using System.Collections;
 using UnityEngine;
 
 namespace _SampleJorgeTorrent.Code.Characters.Performers.Player.Actions
