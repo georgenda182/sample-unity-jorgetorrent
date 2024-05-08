@@ -114,6 +114,7 @@ MonoBehaviour:
   _verticalMovementVelocity: 5
   _rotationVelocity: 180
   _particlesAfterCollection: {fileID: 271142564634204891, guid: fb75d26ed1ef8e547abdbfae01138b30, type: 3}
-  _particlesOnSpawn: {fileID: 8898984049984933479, guid: a95c8c81ff07323468d16263c195444d, type: 3}
+  _particlesOnSpawnPrefab: {fileID: 8898984049984933479, guid: a95c8c81ff07323468d16263c195444d, type: 3}
+  _delayBeforeAppear: 0.2
   _playerHealth: {fileID: 11400000, guid: 1fc1002cc8983b94ca2e77f2a4ec6435, type: 2}
   _healthPointsToAdd: 15

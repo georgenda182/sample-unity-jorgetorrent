@@ -3,6 +3,7 @@ using _SampleJorgeTorrent.Code.Utilities.DesignPatterns.ServiceLocatorPattern;
 using _SampleJorgeTorrent.Code.Utilities.ScriptableProperties;
 using UniRx;
 using UnityEngine;
+using static UnityEngine.InputSystem.InputAction;
 
 namespace _SampleJorgeTorrent.Code.Characters.Performers.Player.Actions
 {
@@ -27,11 +28,26 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Player.Actions
 
         protected override void DefinePerformanceConditions()
         {
-            _playerInputControls.Player.Move.started += context => PerformIfAllowed();
-            _playerInputControls.Player.Move.canceled += context => CancelIfActive();
-            _playerInputControls.Player.Move.performed += context => Run();
+            _playerInputControls.Player.Move.started += OnMoveInputActionStarted;
+            _playerInputControls.Player.Move.canceled += OnMoveInputActionCanceled;
+            _playerInputControls.Player.Move.performed += OnMoveInputActionPerformed;
 
             DefineReactivation();
+        }
+
+        private void OnMoveInputActionStarted(CallbackContext context)
+        {
+            PerformIfAllowed();
+        }
+
+        private void OnMoveInputActionCanceled(CallbackContext context)
+        {
+            CancelIfActive();
+        }
+
+        private void OnMoveInputActionPerformed(CallbackContext context)
+        {
+            Run();
         }
 
         private void DefineReactivation()
@@ -102,6 +118,15 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Player.Actions
             Vector3 newVelocity = _playerTransform.forward * _velocity;
             newVelocity.y = verticalVelocity;
             _playerRigidbody.velocity = newVelocity;
+        }
+
+        protected override void OnDestroy()
+        {
+            base.OnDestroy();
+
+            _playerInputControls.Player.Move.started -= OnMoveInputActionStarted;
+            _playerInputControls.Player.Move.canceled -= OnMoveInputActionCanceled;
+            _playerInputControls.Player.Move.performed -= OnMoveInputActionPerformed;
         }
     }
 }

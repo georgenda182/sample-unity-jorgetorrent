@@ -1,5 +1,6 @@
 ﻿using _SampleJorgeTorrent.Code.Utilities.DesignPatterns.ServiceLocatorPattern;
 using UnityEngine;
+using static UnityEngine.InputSystem.InputAction;
 
 namespace _SampleJorgeTorrent.Code.Characters.Performers.Player.Services
 {
@@ -19,7 +20,12 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Player.Services
             _playerInputControls = playerServiceLocator.GetService<GameInputControls>();
             _playerCamera = playerServiceLocator.GetService<Camera>();
 
-            _playerInputControls.Player.Move.performed += context => ConvertMoveInputValueToEulerRotation(context.ReadValue<Vector2>());
+            _playerInputControls.Player.Move.performed += OnMoveInputActionPerformed;
+        }
+
+        private void OnMoveInputActionPerformed(CallbackContext context)
+        {
+            ConvertMoveInputValueToEulerRotation(context.ReadValue<Vector2>());
         }
 
         private void ConvertMoveInputValueToEulerRotation(Vector2 inputValue)
@@ -49,6 +55,11 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Player.Services
             }
 
             EulerRotation = Vector3.up * (angleOffset + angleByDirection);
+        }
+
+        public void Destroy()
+        {
+            _playerInputControls.Player.Move.performed -= OnMoveInputActionPerformed;
         }
     }
 }

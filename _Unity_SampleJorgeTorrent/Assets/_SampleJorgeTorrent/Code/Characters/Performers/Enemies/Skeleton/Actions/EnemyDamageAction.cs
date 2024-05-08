@@ -1,4 +1,5 @@
-﻿using _SampleJorgeTorrent.Code.Characters.Performers.Player.Services;
+﻿using _SampleJorgeTorrent.Code.Characters.Performers.Player;
+using _SampleJorgeTorrent.Code.Characters.Performers.Player.Services;
 using _SampleJorgeTorrent.Code.HealthSystem;
 using _SampleJorgeTorrent.Code.Utilities.DesignPatterns.ServiceLocatorPattern;
 using DG.Tweening;
@@ -24,7 +25,7 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Enemies.Skeleton.Action
             _enemyAnimator = performerServiceLocator.GetService<Animator>();
             _enemyAnimationEventsDispatcher = performerServiceLocator.GetService<AnimationEventsDispatcher>();
             _enemyHealth = performerServiceLocator.GetService<Health>();
-            _playerTransform = performerServiceLocator.GetService<PlayerGlobalServices>().Transform;
+            _playerTransform = performerServiceLocator.GetService<PerformerServices<PlayerBattleInstaller>>().Transform;
         }
 
         protected override void DefinePerformanceConditions()

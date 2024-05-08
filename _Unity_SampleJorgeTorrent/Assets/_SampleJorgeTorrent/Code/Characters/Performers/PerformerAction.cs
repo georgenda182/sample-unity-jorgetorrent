@@ -91,7 +91,7 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers
         }
         protected abstract void Perform();
 
-        private void OnDestroy()
+        protected virtual void OnDestroy()
         {
             _state.Property.Dispose();
             DeactivateState();

@@ -1,4 +1,5 @@
-﻿using _SampleJorgeTorrent.Code.Characters.Performers.Player.Services;
+﻿using _SampleJorgeTorrent.Code.Characters.Performers.Player;
+using _SampleJorgeTorrent.Code.Characters.Performers.Player.Services;
 using _SampleJorgeTorrent.Code.Utilities.DesignPatterns.ServiceLocatorPattern;
 using UniRx;
 using UnityEngine;
@@ -14,7 +15,7 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Enemies.Skeleton.Servic
 
         public void Install(ServiceLocator enemyServiceLocator)
         {
-            _playerTransform = enemyServiceLocator.GetService<PlayerGlobalServices>().Transform;
+            _playerTransform = enemyServiceLocator.GetService<PerformerServices<PlayerBattleInstaller>>().Transform;
             _distanceToPlayer = new FloatReactiveProperty();
         }
 

@@ -1266,7 +1266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feb4f61992c461945841ccd596dd55a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _heart: {fileID: 6448552892010714933, guid: 8737ed222298a474191b5b5de067bf10, type: 3}
+  _heartPrefab: {fileID: 1288104452140463211, guid: 8737ed222298a474191b5b5de067bf10, type: 3}
   _spawnMaxDistance: 5
 --- !u!1 &5647320336498114895
 GameObject:

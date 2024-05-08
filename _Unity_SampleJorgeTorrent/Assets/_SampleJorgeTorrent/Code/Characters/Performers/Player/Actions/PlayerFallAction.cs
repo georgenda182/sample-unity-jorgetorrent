@@ -1,6 +1,7 @@
 ﻿using _SampleJorgeTorrent.Code.Characters.Performers.Player.Services;
 using _SampleJorgeTorrent.Code.Utilities.DesignPatterns.ServiceLocatorPattern;
 using UnityEngine;
+using static UnityEngine.InputSystem.InputAction;
 
 namespace _SampleJorgeTorrent.Code.Characters.Performers.Player.Actions
 {
@@ -29,7 +30,12 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Player.Actions
         {
             _groundEventsDispatcher.OnJustUngrounded += PerformIfAllowed;
             _groundEventsDispatcher.OnJustGrounded += CancelIfActive;
-            _playerInputControls.Player.Move.performed += context => Redirect();
+            _playerInputControls.Player.Move.performed += OnMoveInputActionPerformed;
+        }
+
+        private void OnMoveInputActionPerformed(CallbackContext context)
+        {
+            Redirect();
         }
 
         protected override void Perform()
@@ -82,6 +88,13 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Player.Actions
             Vector3 newVelocity = _playerTransform.forward * _redirectionVelocity;
             newVelocity.y = verticalVelocity;
             _playerRigidbody.velocity = newVelocity;
+        }
+
+        protected override void OnDestroy()
+        {
+            base.OnDestroy();
+
+            _playerInputControls.Player.Move.performed -= OnMoveInputActionPerformed;
         }
     }
 }

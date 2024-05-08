@@ -12,5 +12,10 @@ namespace _SampleJorgeTorrent.Code.Collectables
         {
             _playerGold.Property.Value += _goldToAdd;
         }
+
+        protected override void Destroy()
+        {
+            Destroy(gameObject);
+        }
     }
 }

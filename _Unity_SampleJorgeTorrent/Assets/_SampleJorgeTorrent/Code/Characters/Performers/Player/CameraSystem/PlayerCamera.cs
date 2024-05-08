@@ -1,5 +1,6 @@
 ﻿using _SampleJorgeTorrent.Code.Utilities.DesignPatterns.ServiceLocatorPattern;
 using UnityEngine;
+using static UnityEngine.InputSystem.InputAction;
 
 namespace _SampleJorgeTorrent.Code.Characters.Performers.Player.CameraSystem
 {
@@ -34,8 +35,18 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Player.CameraSystem
 
         private void SubscribeReorientationToInputControls()
         {
-            _playerInputControls.Player.Camera.started += context => StartReorientation();
-            _playerInputControls.Player.Camera.canceled += context => EndReorientation();
+            _playerInputControls.Player.Camera.started += OnCameraInputActionStarted;
+            _playerInputControls.Player.Camera.canceled += OnCameraInputActionCanceled;
+        }
+
+        private void OnCameraInputActionStarted(CallbackContext context)
+        {
+            StartReorientation();
+        }
+
+        private void OnCameraInputActionCanceled(CallbackContext context)
+        {
+            EndReorientation();
         }
 
         private void StartReorientation()
@@ -85,6 +96,12 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Player.CameraSystem
             }
 
             transform.RotateAround(_target.position, transform.right, deltaAngle);
+        }
+
+        private void OnDestroy()
+        {
+            _playerInputControls.Player.Camera.started -= OnCameraInputActionStarted;
+            _playerInputControls.Player.Camera.canceled -= OnCameraInputActionCanceled;
         }
     }
 }

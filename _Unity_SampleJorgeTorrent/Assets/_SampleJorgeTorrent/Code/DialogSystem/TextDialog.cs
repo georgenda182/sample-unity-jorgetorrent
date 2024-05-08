@@ -2,12 +2,12 @@
 
 namespace _SampleJorgeTorrent.Code.DialogSystem
 {
-    public class DialogWithText : Dialog
+    public class TextDialog : Dialog
     {
         private DialogSpeechBubble _speechBubble;
         private string _text;
 
-        public DialogWithText(string text)
+        public TextDialog(string text)
         {
             _text = text;
         }

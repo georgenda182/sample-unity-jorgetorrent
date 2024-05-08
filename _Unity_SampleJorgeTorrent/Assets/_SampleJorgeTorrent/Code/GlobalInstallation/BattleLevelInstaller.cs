@@ -1,4 +1,7 @@
+using _SampleJorgeTorrent.Code.Characters.Performers;
+using _SampleJorgeTorrent.Code.Characters.Performers.Enemies.Skeleton;
 using _SampleJorgeTorrent.Code.Characters.Performers.Enemies.Skeleton.Services;
+using _SampleJorgeTorrent.Code.Characters.Performers.Player;
 using _SampleJorgeTorrent.Code.Characters.Performers.Player.Services;
 using _SampleJorgeTorrent.Code.HealthSystem;
 using _SampleJorgeTorrent.Code.UI;
@@ -19,6 +22,8 @@ namespace _SampleJorgeTorrent.Code.GlobalInstallation
         [SerializeField] private Transform _enemyTransform;
         [SerializeField] private Health _enemyHealth;
         [SerializeField] private HealthVisualizer _enemyHealthVisualizer;
+        [SerializeField] private ResultScreen _victoryScreen;
+        [SerializeField] private ResultScreen _defeatScreen;
         private GameInputControls _gameInputControls;
 
         [Header("Consumers")]
@@ -37,13 +42,13 @@ namespace _SampleJorgeTorrent.Code.GlobalInstallation
         {
             _globalServiceLocator = new ServiceLocator();
 
-            PlayerGlobalServices playerGlobalServices = new PlayerGlobalServices();
+            PerformerServices<PlayerBattleInstaller> playerGlobalServices = new PerformerServices<PlayerBattleInstaller>();
             playerGlobalServices.Transform = _playerTransform;
             _playerHealth.Initialize();
             playerGlobalServices.Health = _playerHealth;
             _playerHealthVisualizer.Initialize();
 
-            EnemyGlobalServices enemyGlobalServices = new EnemyGlobalServices();
+            PerformerServices<EnemyInstaller> enemyGlobalServices = new PerformerServices<EnemyInstaller>();
             enemyGlobalServices.Transform = _enemyTransform;
             _enemyHealth.Initialize();
             enemyGlobalServices.Health = _enemyHealth;
@@ -64,6 +69,8 @@ namespace _SampleJorgeTorrent.Code.GlobalInstallation
             {
                 servicesConsumer.Value.Install(_globalServiceLocator);
             }
+            _victoryScreen.Install(_enemyHealth);
+            _defeatScreen.Install(_playerHealth);
         }
 
         private void ReparentChildrenToRootAndDestroySelf()

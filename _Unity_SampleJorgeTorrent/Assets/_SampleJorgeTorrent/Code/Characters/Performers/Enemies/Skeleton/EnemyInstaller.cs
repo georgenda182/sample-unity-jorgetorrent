@@ -1,4 +1,5 @@
 using _SampleJorgeTorrent.Code.Characters.Performers.Enemies.Skeleton.Services;
+using _SampleJorgeTorrent.Code.Characters.Performers.Player;
 using _SampleJorgeTorrent.Code.Characters.Performers.Player.Services;
 using _SampleJorgeTorrent.Code.HealthSystem;
 using _SampleJorgeTorrent.Code.Utilities.DesignPatterns.ServiceLocatorPattern;
@@ -29,7 +30,7 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Enemies.Skeleton
 
         [SerializeField] private DistanceToPlayerThresholds _distanceToPlayerThresholds;
 
-        private PlayerGlobalServices _playerGlobalServices;
+        private PerformerServices<PlayerBattleInstaller> _playerGlobalServices;
 
         public void Install(ServiceLocator globalServiceLocator)
         {
@@ -41,7 +42,7 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Enemies.Skeleton
 
         private void StoreGlobalServices(ServiceLocator globalServiceLocator)
         {
-            _playerGlobalServices = globalServiceLocator.GetService<PlayerGlobalServices>();
+            _playerGlobalServices = globalServiceLocator.GetService<PerformerServices<PlayerBattleInstaller>>();
         }
 
         private void ConfigureEnemyServiceLocator()

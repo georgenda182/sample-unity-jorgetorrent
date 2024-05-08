@@ -38,10 +38,6 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Player.Actions
 
         protected override void Cancel()
         {
-            if (_playerAnimator == null)
-            {
-                Debug.Log(gameObject.name);
-            }
             _playerAnimator.SetBool("IsIdle", false);
         }
     }

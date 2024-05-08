@@ -11,11 +11,11 @@ namespace _SampleJorgeTorrent.Code.Collectables
         [SerializeField] private GameObject _particlesAfterCollection;
 
         private float _currentYPosition;
-        private Vector3 _originalPosition;
+        protected Vector3 _originPosition;
 
         private void Start()
         {
-            _originalPosition = transform.position;
+            _originPosition = transform.position;
         }
 
         private void OnTriggerEnter(Collider other)
@@ -25,23 +25,24 @@ namespace _SampleJorgeTorrent.Code.Collectables
             {
                 Collect();
                 SpawnParticles();
-                Destroy(gameObject);
+                Destroy();
             }
         }
 
         protected abstract void Collect();
+        protected abstract void Destroy();
 
         private void SpawnParticles()
         {
             GameObject particlesInstance = Instantiate(_particlesAfterCollection);
-            particlesInstance.transform.position = _originalPosition;
+            particlesInstance.transform.position = transform.position;
             Destroy(particlesInstance, 1f);
         }
 
         private void Update()
         {
-            _currentYPosition = _originalPosition.y + _differenceFromInitialYPosition * Mathf.Sin(Time.time * _verticalMovementVelocity);
-            transform.position = new Vector3(_originalPosition.x, _currentYPosition, _originalPosition.z);
+            _currentYPosition = _originPosition.y + _differenceFromInitialYPosition * Mathf.Sin(Time.time * _verticalMovementVelocity);
+            transform.position = new Vector3(_originPosition.x, _currentYPosition, _originPosition.z);
 
             transform.Rotate(Vector3.up * _rotationVelocity * Time.deltaTime);
         }

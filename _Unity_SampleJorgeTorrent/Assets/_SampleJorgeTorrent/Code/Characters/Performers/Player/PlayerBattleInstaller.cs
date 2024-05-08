@@ -1,3 +1,4 @@
+using _SampleJorgeTorrent.Code.Characters.Performers.Enemies.Skeleton;
 using _SampleJorgeTorrent.Code.Characters.Performers.Enemies.Skeleton.Services;
 using _SampleJorgeTorrent.Code.Characters.Performers.Player.Services;
 using _SampleJorgeTorrent.Code.HealthSystem;
@@ -25,7 +26,7 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Player
 
         private Camera _playerCamera;
         private PlayerMaths _playerMaths;
-        private EnemyGlobalServices _enemyGlobalServices;
+        private PerformerServices<EnemyInstaller> _enemyGlobalServices;
 
         public void Install(ServiceLocator globalServiceLocator)
         {
@@ -39,7 +40,7 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Player
         {
             _playerInputControls = globalServiceLocator.GetService<GameInputControls>();
             _playerCamera = globalServiceLocator.GetService<Camera>();
-            _enemyGlobalServices = globalServiceLocator.GetService<EnemyGlobalServices>();
+            _enemyGlobalServices = globalServiceLocator.GetService<PerformerServices<EnemyInstaller>>();
         }
 
         private void ConfigurePlayerServiceLocator()
@@ -67,6 +68,11 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Player
             {
                 consumer.Value.Install(_performerServiceLocator);
             }
+        }
+
+        private void OnDestroy()
+        {
+            _playerMaths.Destroy();
         }
     }
 }

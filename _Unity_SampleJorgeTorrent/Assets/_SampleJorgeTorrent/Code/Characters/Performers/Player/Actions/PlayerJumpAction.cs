@@ -1,5 +1,8 @@
 ﻿using _SampleJorgeTorrent.Code.Utilities.DesignPatterns.ServiceLocatorPattern;
+using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using static UnityEngine.InputSystem.InputAction;
 
 namespace _SampleJorgeTorrent.Code.Characters.Performers.Player.Actions
 {
@@ -20,7 +23,12 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Player.Actions
 
         protected override void DefinePerformanceConditions()
         {
-            _playerInputControls.Player.Jump.performed += context => PerformIfAllowed();
+            _playerInputControls.Player.Jump.performed += OnJumpInputActionPerformed;
+        }
+
+        private void OnJumpInputActionPerformed(CallbackContext context)
+        {
+            PerformIfAllowed();
         }
 
         protected override void Perform()
@@ -32,6 +40,13 @@ namespace _SampleJorgeTorrent.Code.Characters.Performers.Player.Actions
         protected override void Cancel()
         {
             _playerAnimator.SetBool("IsJumping", false);
+        }
+
+        protected override void OnDestroy()
+        {
+            base.OnDestroy();
+
+            _playerInputControls.Player.Jump.performed -= OnJumpInputActionPerformed;
         }
     }
 }

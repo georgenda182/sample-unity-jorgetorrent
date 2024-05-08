@@ -1,5 +1,6 @@
 using _SampleJorgeTorrent.Code.Utilities.ScriptableProperties;
 using DG.Tweening;
+using System;
 using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,9 +16,11 @@ namespace _SampleJorgeTorrent.Code.UI
         private int _currentHealthPoints;
         private int _initialHealthPoints;
 
+        private IDisposable _subscriptionToHealthChanges;
+
         public void Initialize()
         {
-            _health.Property.Subscribe(VisualizeHealthPoints);
+            _subscriptionToHealthChanges = _health.Property.Subscribe(VisualizeHealthPoints);
             _initialHealthPoints = _health.Property.Value;
             _currentHealthPoints = _health.Property.Value;
         }
@@ -43,6 +46,11 @@ namespace _SampleJorgeTorrent.Code.UI
         private float CalculateHealthBarFillAmount()
         {
             return (float) _currentHealthPoints / (float) _initialHealthPoints;
+        }
+
+        private void OnDestroy()
+        {
+            _subscriptionToHealthChanges.Dispose();
         }
     }
 }

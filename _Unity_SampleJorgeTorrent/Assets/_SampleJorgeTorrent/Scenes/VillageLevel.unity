@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: castle-wood_wall (59)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
       value: 19
@@ -245,6 +249,10 @@ PrefabInstance:
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (57)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -434,6 +442,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: castle-wood_wall (63)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
       value: 25
@@ -484,9 +496,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1357657984}
     m_Modifications:
+    - target: {fileID: 1721529343, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -536,7 +556,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 32201791}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -638,6 +658,10 @@ PrefabInstance:
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (45)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -750,6 +774,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate1_01 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 164854, guid: 862cc76e7c4d26a46a30c4bb7290d771, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 413480, guid: 862cc76e7c4d26a46a30c4bb7290d771, type: 3}
       propertyPath: m_RootOrder
       value: 30
@@ -816,9 +844,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1195954246}
     m_Modifications:
+    - target: {fileID: 1721529343, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -936,6 +972,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: castle-wood_wall (59)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -979,37 +1019,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
   m_PrefabInstance: {fileID: 143099402}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &157234086
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 157234087}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &157234087
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 157234086}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1026587643}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &173413120 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 401846, guid: 74c214f0739460f48a3ea12a42918452, type: 3}
@@ -1265,6 +1274,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: castle-wood_wall (46)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
       value: 23
@@ -1479,7 +1492,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 261073993}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1796,6 +1809,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: castle-wood_wall (60)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -2020,9 +2037,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1195954246}
     m_Modifications:
+    - target: {fileID: 1721529343, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -2073,6 +2098,10 @@ PrefabInstance:
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (51)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -2205,6 +2234,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: castle-wood_wall (68)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -2316,6 +2349,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: castle-wood_wall (74)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2370,6 +2407,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: castle-wood_wall (61)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -2422,7 +2463,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 402435441}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2559,9 +2600,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1195954246}
     m_Modifications:
+    - target: {fileID: 1721529343, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -2612,6 +2661,10 @@ PrefabInstance:
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (73)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -2665,7 +2718,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 436402397}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2697,6 +2750,10 @@ PrefabInstance:
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (71)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -2884,6 +2941,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: castle-wood_wall (60)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -2988,6 +3049,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: castle-wood_wall (58)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -3041,6 +3106,10 @@ PrefabInstance:
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (62)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -3162,9 +3231,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1195954246}
     m_Modifications:
+    - target: {fileID: 1721529343, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -3214,7 +3291,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 537982148}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3251,6 +3328,10 @@ PrefabInstance:
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (46)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -3403,6 +3484,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: castle-wood_wall (70)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -3453,9 +3538,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1357657984}
     m_Modifications:
+    - target: {fileID: 1721529343, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -3505,7 +3598,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 567871951}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3674,6 +3767,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: castle-wood_wall (55)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
       value: 28
@@ -3726,7 +3823,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 664205030}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3834,7 +3931,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 680225622}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3865,7 +3962,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 681059901}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3894,9 +3991,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1357657984}
     m_Modifications:
+    - target: {fileID: 1721529343, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -4026,9 +4131,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1195954246}
     m_Modifications:
+    - target: {fileID: 1721529343, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -4078,7 +4191,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 730431690}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4110,6 +4223,10 @@ PrefabInstance:
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (65)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -4165,6 +4282,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: castle-wood_wall (51)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -4219,6 +4340,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: castle-wood_wall (63)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
       value: 20
@@ -4269,9 +4394,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1357657984}
     m_Modifications:
+    - target: {fileID: 1721529343, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -4322,6 +4455,10 @@ PrefabInstance:
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (67)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -4485,6 +4622,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: castle-wood_wall (69)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -4537,7 +4678,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 784725380}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4874,6 +5015,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: castle-wood_wall (69)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -4994,9 +5139,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1195954246}
     m_Modifications:
+    - target: {fileID: 1721529343, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -5116,6 +5269,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: castle-wood_wall (58)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
       value: 27
@@ -5168,7 +5325,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 892989927}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5361,7 +5518,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 922788138}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5393,6 +5550,10 @@ PrefabInstance:
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (70)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -5524,6 +5685,10 @@ PrefabInstance:
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (71)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -5687,6 +5852,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: castle-wood_wall (64)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
       value: 25
@@ -5739,7 +5908,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 988948638}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5821,6 +5990,10 @@ PrefabInstance:
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (68)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -5908,6 +6081,18 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.00000001545431
       objectReference: {fileID: 0}
+    - target: {fileID: 4000010865869344, guid: 42b8bf721a8194cfe8697148591a66f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010865869344, guid: 42b8bf721a8194cfe8697148591a66f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010865869344, guid: 42b8bf721a8194cfe8697148591a66f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42b8bf721a8194cfe8697148591a66f0, type: 3}
 --- !u!4 &1026587643 stripped
@@ -5924,7 +6109,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1035225919}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5956,6 +6141,10 @@ PrefabInstance:
     - target: {fileID: 1000013291415910, guid: 42b8bf721a8194cfe8697148591a66f0, type: 3}
       propertyPath: m_Name
       value: castle-wood_tower (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013291415910, guid: 42b8bf721a8194cfe8697148591a66f0, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010865869344, guid: 42b8bf721a8194cfe8697148591a66f0, type: 3}
       propertyPath: m_RootOrder
@@ -6006,6 +6195,10 @@ PrefabInstance:
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (48)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -6060,6 +6253,10 @@ PrefabInstance:
     - target: {fileID: 164854, guid: 862cc76e7c4d26a46a30c4bb7290d771, type: 3}
       propertyPath: m_Name
       value: crate1_01 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 164854, guid: 862cc76e7c4d26a46a30c4bb7290d771, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 413480, guid: 862cc76e7c4d26a46a30c4bb7290d771, type: 3}
       propertyPath: m_RootOrder
@@ -6130,6 +6327,10 @@ PrefabInstance:
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (75)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -6248,6 +6449,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: castle-wood_tower (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000013291415910, guid: 42b8bf721a8194cfe8697148591a66f0, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4000010865869344, guid: 42b8bf721a8194cfe8697148591a66f0, type: 3}
       propertyPath: m_RootOrder
       value: 26
@@ -6294,9 +6499,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1357657984}
     m_Modifications:
+    - target: {fileID: 1721529343, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -6452,9 +6665,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1195954246}
     m_Modifications:
+    - target: {fileID: 1721529343, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -6502,9 +6723,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1195954246}
     m_Modifications:
+    - target: {fileID: 1721529343, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -6555,6 +6784,10 @@ PrefabInstance:
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (53)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -6739,6 +6972,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: castle-wood_wall (54)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
       value: 22
@@ -6791,7 +7028,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1195954246}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RightWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6980,6 +7217,10 @@ PrefabInstance:
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (66)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -7198,9 +7439,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1195954246}
     m_Modifications:
+    - target: {fileID: 1721529343, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -7319,9 +7568,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1195954246}
     m_Modifications:
+    - target: {fileID: 1721529343, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -7369,9 +7626,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1357657984}
     m_Modifications:
+    - target: {fileID: 1721529343, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -7422,6 +7687,10 @@ PrefabInstance:
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (56)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -7477,6 +7746,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: castle-wood_wall (54)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
       value: 27
@@ -7530,6 +7803,10 @@ PrefabInstance:
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (50)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -7585,6 +7862,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: castle-wood_wall (55)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
       value: 31
@@ -7635,9 +7916,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1357657984}
     m_Modifications:
+    - target: {fileID: 1721529343, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -7834,7 +8123,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1316956742}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7927,7 +8216,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1328492114}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8084,6 +8373,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: castle-wood_wall (65)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -8136,7 +8429,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1357657984}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: LeftWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8368,6 +8661,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: castle-wood_wall (74)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -8421,6 +8718,10 @@ PrefabInstance:
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (67)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -8542,6 +8843,106 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74c214f0739460f48a3ea12a42918452, type: 3}
+--- !u!1001 &1396435361
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1582371116}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 20e2e6e30d52100419252ca11f25e273, type: 3}
+      propertyPath: m_RootOrder
+      value: 62
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 20e2e6e30d52100419252ca11f25e273, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.4999998
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 20e2e6e30d52100419252ca11f25e273, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.5099998
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 20e2e6e30d52100419252ca11f25e273, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 20e2e6e30d52100419252ca11f25e273, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 20e2e6e30d52100419252ca11f25e273, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 20e2e6e30d52100419252ca11f25e273, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 62.8
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 20e2e6e30d52100419252ca11f25e273, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 20e2e6e30d52100419252ca11f25e273, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 20e2e6e30d52100419252ca11f25e273, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 20e2e6e30d52100419252ca11f25e273, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 20e2e6e30d52100419252ca11f25e273, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 20e2e6e30d52100419252ca11f25e273, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 20e2e6e30d52100419252ca11f25e273, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 20e2e6e30d52100419252ca11f25e273, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d07dc9a550022a74792d211f343e0b16, type: 2}
+    - target: {fileID: 919132149155446097, guid: 20e2e6e30d52100419252ca11f25e273, type: 3}
+      propertyPath: m_Name
+      value: bigDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 20e2e6e30d52100419252ca11f25e273, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 20e2e6e30d52100419252ca11f25e273, type: 3}
+--- !u!1 &1396435362 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 20e2e6e30d52100419252ca11f25e273, type: 3}
+  m_PrefabInstance: {fileID: 1396435361}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1396435363
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396435362}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.000001, y: 4.000001, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1396435366 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 20e2e6e30d52100419252ca11f25e273, type: 3}
+  m_PrefabInstance: {fileID: 1396435361}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1409465842
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8552,6 +8953,10 @@ PrefabInstance:
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (64)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -8607,6 +9012,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: castle-wood_wall (73)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -8661,6 +9070,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: castle-wood_wall (76)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -8711,9 +9124,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1195954246}
     m_Modifications:
+    - target: {fileID: 1721529343, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -8761,9 +9182,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1357657984}
     m_Modifications:
+    - target: {fileID: 1721529343, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -8814,6 +9243,10 @@ PrefabInstance:
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (52)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -8868,6 +9301,10 @@ PrefabInstance:
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (62)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -9083,6 +9520,7 @@ Transform:
   - {fileID: 1777484099}
   - {fileID: 1767371340}
   - {fileID: 2044781270}
+  - {fileID: 1396435366}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9167,9 +9605,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1357657984}
     m_Modifications:
+    - target: {fileID: 1721529343, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -9219,7 +9665,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1588595394}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9338,6 +9784,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: castle-wood_wall (48)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -9391,6 +9841,10 @@ PrefabInstance:
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (72)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -9737,7 +10191,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1648075403}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9766,9 +10220,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1357657984}
     m_Modifications:
+    - target: {fileID: 1721529343, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -9816,9 +10278,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1357657984}
     m_Modifications:
+    - target: {fileID: 157234087, guid: 42b8bf721a8194cfe8697148591a66f0, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1000013291415910, guid: 42b8bf721a8194cfe8697148591a66f0, type: 3}
       propertyPath: m_Name
       value: castle-wood_tower (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013291415910, guid: 42b8bf721a8194cfe8697148591a66f0, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010865869344, guid: 42b8bf721a8194cfe8697148591a66f0, type: 3}
       propertyPath: m_RootOrder
@@ -9920,6 +10390,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: castle-wood_wall (53)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -9970,9 +10444,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1357657984}
     m_Modifications:
+    - target: {fileID: 1721529343, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -10080,6 +10562,10 @@ PrefabInstance:
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (66)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -10193,6 +10679,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: castle-wood_wall (52)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
       value: 29
@@ -10236,37 +10726,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
   m_PrefabInstance: {fileID: 1721012361}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1721529342
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1721529343}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1721529343
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1721529342}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2014860984}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1733844913
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10344,6 +10803,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: castle-wood_wall (75)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -10394,9 +10857,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1195954246}
     m_Modifications:
+    - target: {fileID: 1721529343, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -10446,7 +10917,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1753931361}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10536,6 +11007,10 @@ PrefabInstance:
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (61)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -10836,6 +11311,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: castle-wood_wall (57)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
       value: 20
@@ -10889,6 +11368,10 @@ PrefabInstance:
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (50)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -10944,6 +11427,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: castle-wood_wall (56)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -10997,6 +11484,10 @@ PrefabInstance:
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (72)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -11191,6 +11682,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: castle-wood_wall (47)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
       value: 18
@@ -11245,6 +11740,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: castle-wood_wall (49)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
       value: 23
@@ -11297,7 +11796,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1866472863}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11328,7 +11827,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1866987348}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11357,9 +11856,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1357657984}
     m_Modifications:
+    - target: {fileID: 157234087, guid: 42b8bf721a8194cfe8697148591a66f0, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1000013291415910, guid: 42b8bf721a8194cfe8697148591a66f0, type: 3}
       propertyPath: m_Name
       value: castle-wood_tower (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013291415910, guid: 42b8bf721a8194cfe8697148591a66f0, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010865869344, guid: 42b8bf721a8194cfe8697148591a66f0, type: 3}
       propertyPath: m_RootOrder
@@ -11409,7 +11916,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1878160305}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11507,6 +12014,10 @@ PrefabInstance:
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (45)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -11637,7 +12148,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1902562456}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11732,9 +12243,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1195954246}
     m_Modifications:
+    - target: {fileID: 1721529343, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -11784,7 +12303,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1937508357}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11826,6 +12345,10 @@ PrefabInstance:
     - target: {fileID: 164854, guid: 862cc76e7c4d26a46a30c4bb7290d771, type: 3}
       propertyPath: m_Name
       value: crate1_01 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 164854, guid: 862cc76e7c4d26a46a30c4bb7290d771, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 413480, guid: 862cc76e7c4d26a46a30c4bb7290d771, type: 3}
       propertyPath: m_RootOrder
@@ -12093,7 +12616,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1996129959}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12125,6 +12648,10 @@ PrefabInstance:
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (49)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -12212,6 +12739,18 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
+    - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
 --- !u!4 &2014860984 stripped
@@ -12229,6 +12768,10 @@ PrefabInstance:
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (76)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -12282,7 +12825,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2032596849}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12318,7 +12861,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2048410230}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12471,6 +13014,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: castle-wood_wall (47)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -12589,7 +13136,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2094884872}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12688,9 +13235,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1357657984}
     m_Modifications:
+    - target: {fileID: 1721529343, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -12808,9 +13363,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1357657984}
     m_Modifications:
+    - target: {fileID: 1721529343, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_Name
       value: castle-wood_wall (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010093134026, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010160792936, guid: 893ad36e0dfd347d38a233a920cf127b, type: 3}
       propertyPath: m_RootOrder
@@ -12858,9 +13421,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1195954246}
     m_Modifications:
+    - target: {fileID: 157234087, guid: 42b8bf721a8194cfe8697148591a66f0, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1000013291415910, guid: 42b8bf721a8194cfe8697148591a66f0, type: 3}
       propertyPath: m_Name
       value: castle-wood_tower (02)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013291415910, guid: 42b8bf721a8194cfe8697148591a66f0, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010865869344, guid: 42b8bf721a8194cfe8697148591a66f0, type: 3}
       propertyPath: m_RootOrder
